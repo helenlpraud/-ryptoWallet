@@ -12,6 +12,8 @@
 		4FE816A029127E4A00F4B1D9 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8169F29127E4A00F4B1D9 /* AuthViewController.swift */; };
 		4FE816A529127E5300F4B1D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FE816A429127E5300F4B1D9 /* Assets.xcassets */; };
 		4FE816A829127E5300F4B1D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FE816A629127E5300F4B1D9 /* LaunchScreen.storyboard */; };
+		4FE816B12912D06600F4B1D9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE816B02912D06600F4B1D9 /* Colors.swift */; };
+		4FE816B32912D44C00F4B1D9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE816B22912D44C00F4B1D9 /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		4FE816A429127E5300F4B1D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FE816A729127E5300F4B1D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FE816A929127E5300F4B1D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FE816B02912D06600F4B1D9 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		4FE816B22912D44C00F4B1D9 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				4FE816A429127E5300F4B1D9 /* Assets.xcassets */,
 				4FE816A629127E5300F4B1D9 /* LaunchScreen.storyboard */,
 				4FE816A929127E5300F4B1D9 /* Info.plist */,
+				4FE816B02912D06600F4B1D9 /* Colors.swift */,
+				4FE816B22912D44C00F4B1D9 /* Strings.swift */,
 			);
 			path = "СryptoWallet";
 			sourceTree = "<group>";
@@ -143,6 +149,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FE816A029127E4A00F4B1D9 /* AuthViewController.swift in Sources */,
+				4FE816B12912D06600F4B1D9 /* Colors.swift in Sources */,
+				4FE816B32912D44C00F4B1D9 /* Strings.swift in Sources */,
 				4FE8169C29127E4A00F4B1D9 /* AppDelegate.swift in Sources */,
 				4FE8169E29127E4A00F4B1D9 /* SceneDelegate.swift in Sources */,
 			);
