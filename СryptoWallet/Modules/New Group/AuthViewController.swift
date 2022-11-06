@@ -9,13 +9,28 @@ import UIKit
 
 final class AuthViewController: UIViewController {
     
+    // MARK: - Initializers
+    
+    init(viewModel: AuthViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - ViewModel
+    
+    var viewModel: AuthViewModelProtocol
+    
     // MARK: - Subviews
     
     private let loginUIView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 5
+        view.layer.cornerRadius = Constants.cornerRadius
         view.layer.borderColor = Colors.borderAuth
-        view.layer.borderWidth = 2
+        view.layer.borderWidth = Constants.borderWidth
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -23,9 +38,9 @@ final class AuthViewController: UIViewController {
     
     private let passwordUIView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 5
+        view.layer.cornerRadius = Constants.cornerRadius
         view.layer.borderColor = Colors.borderAuth
-        view.layer.borderWidth = 2
+        view.layer.borderWidth = Constants.borderWidth
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -43,6 +58,7 @@ final class AuthViewController: UIViewController {
     
     private let passwordTextField: UITextField = {
         let textField = UITextField()
+        textField.isSecureTextEntry = true
         textField.attributedPlaceholder = NSAttributedString(
             string: StringsAuth.passwordPlaceholderAuth,
             attributes: [NSAttributedString.Key.foregroundColor: Colors.placeholderAuth]
@@ -56,9 +72,9 @@ final class AuthViewController: UIViewController {
         button.setTitle(StringsAuth.buttonTitleAuth, for: .normal)
         button.setTitleColor(Colors.buttonTitleAuth, for: .normal)
         button.backgroundColor = .white
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = Constants.cornerRadius
         button.layer.borderColor = Colors.buttonBorderColorAuth
-        button.layer.borderWidth = 2
+        button.layer.borderWidth = Constants.borderWidth
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -74,9 +90,21 @@ final class AuthViewController: UIViewController {
         addPasswordUIView()
         addPasswordTextField()
         addEntryButton()
+        entryButton.addTarget(self, action: #selector(auth), for: .touchUpInside)
     }
     
-    // MARK: - Private Functions
+    // MARK: - Actions
+    
+    @objc
+    private func auth() {
+        guard let login = loginTextField.text, let password = passwordTextField.text else { return }
+        let isSuccessChecked =  viewModel.checkAuthData(currentLogin: login,
+                                                        currentPswd: password)
+        guard let viewModel = viewModel as? AuthViewModel else { return }
+        viewModel.auth(isSuccessChecked: isSuccessChecked)
+    }
+    
+    // MARK: - Add Subviews
     
     private func addLoginUIView() {
         view.addSubview(loginUIView)
@@ -93,7 +121,7 @@ final class AuthViewController: UIViewController {
         view.addSubview(loginTextField)
         
         NSLayoutConstraint.activate([
-            loginTextField.centerXAnchor.constraint(equalTo: loginUIView.centerXAnchor),
+            loginTextField.leadingAnchor.constraint(equalTo: loginUIView.leadingAnchor, constant: Constants.insetLeading),
             loginTextField.centerYAnchor.constraint(equalTo: loginUIView.centerYAnchor)
         ])
     }
@@ -113,7 +141,7 @@ final class AuthViewController: UIViewController {
         view.addSubview(passwordTextField)
         
         NSLayoutConstraint.activate([
-            passwordTextField.centerXAnchor.constraint(equalTo: passwordUIView.centerXAnchor),
+            passwordTextField.leadingAnchor.constraint(equalTo: passwordUIView.leadingAnchor, constant: Constants.insetLeading),
             passwordTextField.centerYAnchor.constraint(equalTo: passwordUIView.centerYAnchor)
         ])
     }
@@ -150,6 +178,18 @@ private extension AuthViewController {
         
         static var offsetTop: Double {
             return 250.0
+        }
+        
+        static var insetLeading: Double {
+            return 16.0
+        }
+        
+        static var cornerRadius: Double {
+            return 5.0
+        }
+        
+        static var borderWidth: Double {
+            return 2.0
         }
     }
 }

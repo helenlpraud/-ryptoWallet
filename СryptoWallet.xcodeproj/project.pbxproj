@@ -7,16 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F345AA12918597100BA0849 /* DetailedCardCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345AA02918597100BA0849 /* DetailedCardCoinViewController.swift */; };
+		4F345AA429185DE000BA0849 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345AA329185DE000BA0849 /* Coin.swift */; };
 		4FE8169C29127E4A00F4B1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8169B29127E4A00F4B1D9 /* AppDelegate.swift */; };
 		4FE8169E29127E4A00F4B1D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8169D29127E4A00F4B1D9 /* SceneDelegate.swift */; };
 		4FE816A029127E4A00F4B1D9 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8169F29127E4A00F4B1D9 /* AuthViewController.swift */; };
 		4FE816A529127E5300F4B1D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FE816A429127E5300F4B1D9 /* Assets.xcassets */; };
 		4FE816A829127E5300F4B1D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FE816A629127E5300F4B1D9 /* LaunchScreen.storyboard */; };
 		4FE816B12912D06600F4B1D9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE816B02912D06600F4B1D9 /* Colors.swift */; };
-		4FE816B32912D44C00F4B1D9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE816B22912D44C00F4B1D9 /* Strings.swift */; };
+		4FE816B32912D44C00F4B1D9 /* StringsAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE816B22912D44C00F4B1D9 /* StringsAuth.swift */; };
+		4FFE5E8C291430AC00CFC65F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE5E8B291430AC00CFC65F /* AuthViewModel.swift */; };
+		4FFE5E8E2914395E00CFC65F /* ValidationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE5E8D2914395E00CFC65F /* ValidationConstants.swift */; };
+		4FFE5E912914660100CFC65F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE5E902914660100CFC65F /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F345AA02918597100BA0849 /* DetailedCardCoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCardCoinViewController.swift; sourceTree = "<group>"; };
+		4F345AA329185DE000BA0849 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		4FE8169829127E4A00F4B1D9 /* СryptoWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "СryptoWallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE8169B29127E4A00F4B1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FE8169D29127E4A00F4B1D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +32,10 @@
 		4FE816A729127E5300F4B1D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FE816A929127E5300F4B1D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FE816B02912D06600F4B1D9 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		4FE816B22912D44C00F4B1D9 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		4FE816B22912D44C00F4B1D9 /* StringsAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsAuth.swift; sourceTree = "<group>"; };
+		4FFE5E8B291430AC00CFC65F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		4FFE5E8D2914395E00CFC65F /* ValidationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationConstants.swift; sourceTree = "<group>"; };
+		4FFE5E902914660100CFC65F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +49,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F345A9E291858DA00BA0849 /* СoinsListModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "СoinsListModule";
+			sourceTree = "<group>";
+		};
+		4F345A9F2918591700BA0849 /* DetailedCardCoinModule */ = {
+			isa = PBXGroup;
+			children = (
+				4F345AA02918597100BA0849 /* DetailedCardCoinViewController.swift */,
+			);
+			path = DetailedCardCoinModule;
+			sourceTree = "<group>";
+		};
+		4F345AA229185DCA00BA0849 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4F345AA329185DE000BA0849 /* Coin.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4FE8168F29127E4A00F4B1D9 = {
 			isa = PBXGroup;
 			children = (
@@ -58,15 +91,17 @@
 		4FE8169A29127E4A00F4B1D9 /* СryptoWallet */ = {
 			isa = PBXGroup;
 			children = (
+				4F345AA229185DCA00BA0849 /* Model */,
+				4FFE5E8F2914400400CFC65F /* Services */,
 				4FE816AF29127E6B00F4B1D9 /* Modules */,
 				4FE8169B29127E4A00F4B1D9 /* AppDelegate.swift */,
 				4FE8169D29127E4A00F4B1D9 /* SceneDelegate.swift */,
-				4FE8169F29127E4A00F4B1D9 /* AuthViewController.swift */,
 				4FE816A429127E5300F4B1D9 /* Assets.xcassets */,
 				4FE816A629127E5300F4B1D9 /* LaunchScreen.storyboard */,
 				4FE816A929127E5300F4B1D9 /* Info.plist */,
+				4FFE5E8D2914395E00CFC65F /* ValidationConstants.swift */,
 				4FE816B02912D06600F4B1D9 /* Colors.swift */,
-				4FE816B22912D44C00F4B1D9 /* Strings.swift */,
+				4FE816B22912D44C00F4B1D9 /* StringsAuth.swift */,
 			);
 			path = "СryptoWallet";
 			sourceTree = "<group>";
@@ -74,8 +109,29 @@
 		4FE816AF29127E6B00F4B1D9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4F345A9F2918591700BA0849 /* DetailedCardCoinModule */,
+				4F345A9E291858DA00BA0849 /* СoinsListModule */,
+				4FE816B42914035600F4B1D9 /* AuthModule */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		4FE816B42914035600F4B1D9 /* AuthModule */ = {
+			isa = PBXGroup;
+			children = (
+				4FE8169F29127E4A00F4B1D9 /* AuthViewController.swift */,
+				4FFE5E8B291430AC00CFC65F /* AuthViewModel.swift */,
+			);
+			name = AuthModule;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		4FFE5E8F2914400400CFC65F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4FFE5E902914660100CFC65F /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,10 +205,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FE816A029127E4A00F4B1D9 /* AuthViewController.swift in Sources */,
+				4F345AA12918597100BA0849 /* DetailedCardCoinViewController.swift in Sources */,
 				4FE816B12912D06600F4B1D9 /* Colors.swift in Sources */,
-				4FE816B32912D44C00F4B1D9 /* Strings.swift in Sources */,
+				4FFE5E8C291430AC00CFC65F /* AuthViewModel.swift in Sources */,
+				4FFE5E8E2914395E00CFC65F /* ValidationConstants.swift in Sources */,
+				4FE816B32912D44C00F4B1D9 /* StringsAuth.swift in Sources */,
 				4FE8169C29127E4A00F4B1D9 /* AppDelegate.swift in Sources */,
 				4FE8169E29127E4A00F4B1D9 /* SceneDelegate.swift in Sources */,
+				4F345AA429185DE000BA0849 /* Coin.swift in Sources */,
+				4FFE5E912914660100CFC65F /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
