@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailedCardCoinViewController: UIViewController {
+final class DetailedCardCoinViewController: UIViewController {
     
     // MARK: - Subviews
     
@@ -80,7 +80,7 @@ private extension DetailedCardCoinViewController {
     enum Constants {
         
         static var offsetTop: Double {
-            return 250.0
+            return 100.0
         }
         
         static var insetLeading: Double {
