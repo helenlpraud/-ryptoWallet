@@ -13,6 +13,7 @@
 		4F345AAA29191A0900BA0849 /* CoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345AA929191A0900BA0849 /* CoinTableViewCell.swift */; };
 		4F345AAC2919202800BA0849 /* UITableView+registerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345AAB2919202800BA0849 /* UITableView+registerClass.swift */; };
 		4F345AB02919206E00BA0849 /* String+className.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345AAF2919206E00BA0849 /* String+className.swift */; };
+		4F345AB32919277A00BA0849 /* CoinTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345AB22919277A00BA0849 /* CoinTableViewCellModel.swift */; };
 		4FE8169C29127E4A00F4B1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8169B29127E4A00F4B1D9 /* AppDelegate.swift */; };
 		4FE8169E29127E4A00F4B1D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8169D29127E4A00F4B1D9 /* SceneDelegate.swift */; };
 		4FE816A029127E4A00F4B1D9 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8169F29127E4A00F4B1D9 /* AuthViewController.swift */; };
@@ -32,6 +33,7 @@
 		4F345AA929191A0900BA0849 /* CoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTableViewCell.swift; sourceTree = "<group>"; };
 		4F345AAB2919202800BA0849 /* UITableView+registerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+registerClass.swift"; sourceTree = "<group>"; };
 		4F345AAF2919206E00BA0849 /* String+className.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+className.swift"; sourceTree = "<group>"; };
+		4F345AB22919277A00BA0849 /* CoinTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTableViewCellModel.swift; sourceTree = "<group>"; };
 		4FE8169829127E4A00F4B1D9 /* СryptoWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "СryptoWallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE8169B29127E4A00F4B1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FE8169D29127E4A00F4B1D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,8 +62,8 @@
 		4F345A9E291858DA00BA0849 /* СoinsListModule */ = {
 			isa = PBXGroup;
 			children = (
+				4F345AB12919274A00BA0849 /* CoinCell */,
 				4F345AA7291911D100BA0849 /* CoinsListViewController.swift */,
-				4F345AA929191A0900BA0849 /* CoinTableViewCell.swift */,
 			);
 			path = "СoinsListModule";
 			sourceTree = "<group>";
@@ -80,6 +82,15 @@
 				4F345AA329185DE000BA0849 /* Coin.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4F345AB12919274A00BA0849 /* CoinCell */ = {
+			isa = PBXGroup;
+			children = (
+				4F345AA929191A0900BA0849 /* CoinTableViewCell.swift */,
+				4F345AB22919277A00BA0849 /* CoinTableViewCellModel.swift */,
+			);
+			path = CoinCell;
 			sourceTree = "<group>";
 		};
 		4FE8168F29127E4A00F4B1D9 = {
@@ -217,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FE816A029127E4A00F4B1D9 /* AuthViewController.swift in Sources */,
+				4F345AB32919277A00BA0849 /* CoinTableViewCellModel.swift in Sources */,
 				4F345AA12918597100BA0849 /* DetailedCardCoinViewController.swift in Sources */,
 				4F345AA8291911D100BA0849 /* CoinsListViewController.swift in Sources */,
 				4FE816B12912D06600F4B1D9 /* Colors.swift in Sources */,
