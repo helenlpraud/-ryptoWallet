@@ -9,7 +9,7 @@ import UIKit
 
 final class AuthViewController: UIViewController {
     
-    // MARK: - Initializers
+    // MARK: Initializers
     
     init(viewModel: AuthViewModelProtocol) {
         self.viewModel = viewModel
@@ -20,11 +20,11 @@ final class AuthViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - ViewModel
+    // MARK: ViewModel
     
     var viewModel: AuthViewModelProtocol
     
-    // MARK: - Subviews
+    // MARK: Subviews
     
     private let loginUIView: UIView = {
         let view = UIView()
@@ -80,7 +80,7 @@ final class AuthViewController: UIViewController {
         return button
     }()
     
-    // MARK: - Lifecycle
+    // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,7 +93,7 @@ final class AuthViewController: UIViewController {
         entryButton.addTarget(self, action: #selector(auth), for: .touchUpInside)
     }
     
-    // MARK: - Actions
+    // MARK: Actions
     
     @objc
     private func auth() {
@@ -104,7 +104,7 @@ final class AuthViewController: UIViewController {
         viewModel.auth(isSuccessChecked: isSuccessChecked)
     }
     
-    // MARK: - Add Subviews
+    // MARK: Add Subviews
     
     private func addLoginUIView() {
         view.addSubview(loginUIView)

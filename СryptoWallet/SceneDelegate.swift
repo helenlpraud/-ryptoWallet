@@ -16,8 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-//        window?.rootViewController = AuthViewController(viewModel: AuthViewModel())
-        window?.rootViewController = CoinsListViewController()
+        let requests = [CoinRequest(typeCoin: .btc),
+                        CoinRequest(typeCoin: .cardano),
+                        CoinRequest(typeCoin: .dogecoin)]
+        let coinsListModel = CoinsListViewModel(requests: requests)
+        let navController = UINavigationController(rootViewController: CoinsListViewController(with: coinsListModel))
+        window?.rootViewController = navController
+//        window?.rootViewController = DetailedCardCoinViewController()
         window?.makeKeyAndVisible()
     }
 

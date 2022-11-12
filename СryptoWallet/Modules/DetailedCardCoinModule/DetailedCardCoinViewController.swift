@@ -9,7 +9,17 @@ import UIKit
 
 final class DetailedCardCoinViewController: UIViewController {
     
-    // MARK: - Subviews
+    // MARK: ViewModel
+    
+    private var viewModel: DetailedCardCoinViewModel?
+    
+    // MARK: Subviews
+    
+    private let container: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
     
     private let nameLabel: UILabel = {
         let label = UILabel()
@@ -33,7 +43,7 @@ final class DetailedCardCoinViewController: UIViewController {
         return label
     }()
     
-    // MARK: - Lifecycle
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +53,7 @@ final class DetailedCardCoinViewController: UIViewController {
         addPercentChangeUSD24hLabel()
     }
     
-    // MARK: - Add Subviews
+    // MARK: Add Subviews
     
     private func addNameLabel() {
         view.addSubview(nameLabel)
@@ -70,6 +80,14 @@ final class DetailedCardCoinViewController: UIViewController {
             percentChangeUSD24hLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             percentChangeUSD24hLabel.topAnchor.constraint(equalTo: priceUSDLabel.bottomAnchor, constant: Constants.offsetBottom)
         ])
+    }
+    
+    // MARK: Configure
+    
+    func configure(with model: DetailedCardCoinViewModel) {
+        nameLabel.text = "Coin: " + model.name
+        priceUSDLabel.text = "Price, $: " + model.priceUSD
+        percentChangeUSD24hLabel.text = "% change USD 24h: " + model.percentChangeUSD24h
     }
 }
 

@@ -9,7 +9,7 @@ import UIKit
 
 protocol AuthViewModelProtocol {
     
-    // MARK: - Public Functions
+    // MARK: Public Functions
     
     func checkAuthData(currentLogin: String, currentPswd: String) -> Bool
     func auth(isSuccessChecked: Bool)
@@ -17,7 +17,7 @@ protocol AuthViewModelProtocol {
 
 class AuthViewModel: AuthViewModelProtocol {
     
-    // MARK: - Public Functions
+    // MARK: Public Functions
     
     func checkAuthData(currentLogin: String, currentPswd: String) -> Bool {
         if (currentLogin == ValidationConstants.login &&
