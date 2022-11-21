@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AuthView: UIView {
+final class AuthView: UIScrollView {
     
     // MARK: Constants
     
@@ -42,7 +42,17 @@ final class AuthView: UIView {
         }
     }
     
+    // MARK: ViewModel
+    
     var viewModel: AuthViewModelProtocol?
+    
+    // MARK: Subviews
+    
+    private let containerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     private let loginUIView: UIView = {
         let view = UIView()
@@ -98,8 +108,13 @@ final class AuthView: UIView {
         return button
     }()
     
+    // MARK: Initializers
+    
     override init(frame: CGRect) {
         super.init(frame: CGRect())
+        self.backgroundColor = Colors.backgroundAuth
+        
+        addContainerView()
         addLoginUIView()
         addLoginTextField()
         addPasswordUIView()
@@ -112,6 +127,8 @@ final class AuthView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Actions
+    
     @objc
     private func auth() {
         guard let login = loginTextField.text, let password = passwordTextField.text else { return }
@@ -121,25 +138,50 @@ final class AuthView: UIView {
         viewModel.auth(isSuccessChecked: isSuccessChecked)
     }
     
+    // MARK: Configure
+    
     func configure(with viewModel: AuthViewModelProtocol) {
         self.viewModel = viewModel
     }
     
+    func updateForKeyboardWillShowState(height: CGFloat) {
+        contentInset.bottom = height
+        verticalScrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: height, right: 0)
+    }
+    
+    func updateForKeyboardWillHideState() {
+        contentInset.bottom = .zero
+        verticalScrollIndicatorInsets = .zero
+    }
+    
     // MARK: Add Subviews
     
-    private func addLoginUIView() {
-        addSubview(loginUIView)
+    private func addContainerView() {
+        addSubview(containerView)
         
         NSLayoutConstraint.activate([
-            loginUIView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            loginUIView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Constants.offsetTop),
+            containerView.topAnchor.constraint(equalTo: topAnchor),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            containerView.widthAnchor.constraint(equalTo: widthAnchor),
+            containerView.heightAnchor.constraint(equalTo: heightAnchor)
+        ])
+    }
+    
+    private func addLoginUIView() {
+        containerView.addSubview(loginUIView)
+        
+        NSLayoutConstraint.activate([
+            loginUIView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            loginUIView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constants.offsetTop),
             loginUIView.heightAnchor.constraint(equalToConstant: Constants.height),
             loginUIView.widthAnchor.constraint(equalToConstant: Constants.width)
         ])
     }
     
     private func addLoginTextField() {
-        addSubview(loginTextField)
+        loginUIView.addSubview(loginTextField)
         
         NSLayoutConstraint.activate([
             loginTextField.leadingAnchor.constraint(equalTo: loginUIView.leadingAnchor, constant: Constants.insetLeading),
@@ -148,10 +190,10 @@ final class AuthView: UIView {
     }
     
     private func addPasswordUIView() {
-        addSubview(passwordUIView)
+        containerView.addSubview(passwordUIView)
         
         NSLayoutConstraint.activate([
-            passwordUIView.centerXAnchor.constraint(equalTo: loginUIView.centerXAnchor),
+            passwordUIView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             passwordUIView.topAnchor.constraint(equalTo: loginUIView.bottomAnchor, constant: Constants.offsetBottom),
             passwordUIView.heightAnchor.constraint(equalToConstant: Constants.height),
             passwordUIView.widthAnchor.constraint(equalToConstant: Constants.width)
@@ -159,7 +201,7 @@ final class AuthView: UIView {
     }
     
     private func addPasswordTextField() {
-        addSubview(passwordTextField)
+        passwordUIView.addSubview(passwordTextField)
         
         NSLayoutConstraint.activate([
             passwordTextField.leadingAnchor.constraint(equalTo: passwordUIView.leadingAnchor, constant: Constants.insetLeading),
@@ -168,10 +210,10 @@ final class AuthView: UIView {
     }
     
     private func addEntryButton() {
-        addSubview(entryButton)
+        containerView.addSubview(entryButton)
         
         NSLayoutConstraint.activate([
-            entryButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            entryButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             entryButton.topAnchor.constraint(equalTo: passwordUIView.bottomAnchor, constant: Constants.offsetBottom),
             entryButton.heightAnchor.constraint(equalToConstant: Constants.height),
             entryButton.widthAnchor.constraint(equalToConstant: Constants.width)

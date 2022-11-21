@@ -14,10 +14,10 @@ extension Coin {
                                                priceUSD: nil,
                                                priceBTC: nil,
                                                percentChangeUSD24h: nil)
-        if let priceUSD = priceUSD {
+        if let priceUSD = priceUSD?.rounded(toPlaces: 3) {
             cellModel.priceUSD = priceUSD.toString()
         }
-        if let priceBTC = priceUSD {
+        if let priceBTC = priceUSD?.rounded(toPlaces: 3) {
             cellModel.priceBTC = priceBTC.toString()
         }
         cellModel.percentChangeUSD24h = percentChangeUSD24h.toString()

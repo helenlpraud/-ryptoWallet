@@ -22,6 +22,8 @@
 		4F7F3B9C291C1DAF005275A7 /* CoinsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F3B9B291C1DAF005275A7 /* CoinsListViewModel.swift */; };
 		4F7F3BA0291D3A1B005275A7 /* HeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F3B9F291D3A1A005275A7 /* HeaderUIView.swift */; };
 		4F7F3BA3291D51FB005275A7 /* HeaderUIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F3BA2291D51FB005275A7 /* HeaderUIViewModel.swift */; };
+		4FB2A97A292A18AD00D57CED /* Double+rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB2A979292A18AD00D57CED /* Double+rounded.swift */; };
+		4FB2A97C292ACDB200D57CED /* UITableViewCell+reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB2A97B292ACDB200D57CED /* UITableViewCell+reuseIdentifier.swift */; };
 		4FD7F16C2923C80500CF9F10 /* AuthModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7F16B2923C80500CF9F10 /* AuthModuleBuilder.swift */; };
 		4FD7F16E2923D03F00CF9F10 /* CoinsListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7F16D2923D03F00CF9F10 /* CoinsListModuleBuilder.swift */; };
 		4FD7F1702923D85300CF9F10 /* DetailedCardCoinModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7F16F2923D85300CF9F10 /* DetailedCardCoinModuleBuilder.swift */; };
@@ -73,6 +75,8 @@
 		4F7F3B9B291C1DAF005275A7 /* CoinsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsListViewModel.swift; sourceTree = "<group>"; };
 		4F7F3B9F291D3A1A005275A7 /* HeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUIView.swift; sourceTree = "<group>"; };
 		4F7F3BA2291D51FB005275A7 /* HeaderUIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUIViewModel.swift; sourceTree = "<group>"; };
+		4FB2A979292A18AD00D57CED /* Double+rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+rounded.swift"; sourceTree = "<group>"; };
+		4FB2A97B292ACDB200D57CED /* UITableViewCell+reuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+reuseIdentifier.swift"; sourceTree = "<group>"; };
 		4FD7F16B2923C80500CF9F10 /* AuthModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModuleBuilder.swift; sourceTree = "<group>"; };
 		4FD7F16D2923D03F00CF9F10 /* CoinsListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsListModuleBuilder.swift; sourceTree = "<group>"; };
 		4FD7F16F2923D85300CF9F10 /* DetailedCardCoinModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCardCoinModuleBuilder.swift; sourceTree = "<group>"; };
@@ -124,8 +128,10 @@
 		4F02A0F8291F85DB0069AB2E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4FB2A97B292ACDB200D57CED /* UITableViewCell+reuseIdentifier.swift */,
 				4F7F3B99291C1BDC005275A7 /* HTTPURLResponse + hasSucsessStatusCode.swift */,
 				4FD7F1992927F88600CF9F10 /* Double+toString.swift */,
+				4FB2A979292A18AD00D57CED /* Double+rounded.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -491,6 +497,7 @@
 				4F345ACC291C0D0100BA0849 /* CoinRequest.swift in Sources */,
 				4FE8169C29127E4A00F4B1D9 /* AppDelegate.swift in Sources */,
 				4FE8169E29127E4A00F4B1D9 /* SceneDelegate.swift in Sources */,
+				4FB2A97C292ACDB200D57CED /* UITableViewCell+reuseIdentifier.swift in Sources */,
 				4FD7F1A12928215C00CF9F10 /* CoinseResponse+convertToCoin.swift in Sources */,
 				4FD7F1982925110100CF9F10 /* MainCoordinatorBuilder.swift in Sources */,
 				4FD7F1742923DA7E00CF9F10 /* DetailCardCoinView.swift in Sources */,
@@ -498,6 +505,7 @@
 				4FD7F16E2923D03F00CF9F10 /* CoinsListModuleBuilder.swift in Sources */,
 				4F6F6CB629223F42003429DD /* StringsNetwork.swift in Sources */,
 				4F345AA429185DE000BA0849 /* CoinResponse.swift in Sources */,
+				4FB2A97A292A18AD00D57CED /* Double+rounded.swift in Sources */,
 				4F345ACA291BF9BC00BA0849 /* NetworkService.swift in Sources */,
 				4F7F3BA3291D51FB005275A7 /* HeaderUIViewModel.swift in Sources */,
 				4FD7F19C29280F1B00CF9F10 /* AuthView.swift in Sources */,

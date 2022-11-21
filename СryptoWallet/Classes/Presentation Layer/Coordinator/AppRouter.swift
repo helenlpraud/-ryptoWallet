@@ -37,19 +37,7 @@ final class AppRouter: Routable {
 
     func setRootModule(_ module: Presentable?, animated: Bool) {
         guard let toController = module?.toPresent else { return }
-        if let fromController = rootController, animated {
-            let snapshot = fromController.view.snapshotView(afterScreenUpdates: true)!
-            toController.view.addSubview(snapshot)
-            rootController = toController
-            UIView.animate(withDuration: 0.3, animations: {
-                snapshot.alpha = 0.0
-                snapshot.layer.transform = CATransform3DMakeScale(1.5, 1.5, 1.5)
-            }, completion: { _ in
-                snapshot.removeFromSuperview()
-            })
-        } else {
-            rootController = toController
-        }
+        rootController = toController
     }
 
     func present(_ module: Presentable?, animated: Bool) {

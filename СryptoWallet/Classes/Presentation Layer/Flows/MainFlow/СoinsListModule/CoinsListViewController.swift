@@ -9,12 +9,16 @@ import UIKit
 
 protocol CoinsListModule: Presentable {
     
+    // MARK: Public Properties
+    
     var onCoinSelect: ((CoinTableViewCellModel) -> ())? { get set }
     var onLogout: (() -> Void)? { get set }
 }
 
 final class CoinsListViewController: UIViewController,
                                      CoinsListModule {
+    
+    // MARK: Public Properties
     
     var onCoinSelect: ((CoinTableViewCellModel) -> ())?
     var onLogout: (() -> Void)?
@@ -54,7 +58,7 @@ final class CoinsListViewController: UIViewController,
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.isHidden = true
-        tableView.register(CoinTableViewCell.self, forCellReuseIdentifier: CoinTableViewCell.identifier)
+        tableView.register(CoinTableViewCell.self, forCellReuseIdentifier: CoinTableViewCell.reuseIdentifier)
         tableView.register(HeaderUIView.self, forHeaderFooterViewReuseIdentifier: "Header")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -191,7 +195,7 @@ extension CoinsListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CoinTableViewCell.identifier, for: indexPath) as? CoinTableViewCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CoinTableViewCell.reuseIdentifier, for: indexPath) as? CoinTableViewCell else {
             preconditionFailure("Invalid cell")
         }
         cell.backgroundColor = .white

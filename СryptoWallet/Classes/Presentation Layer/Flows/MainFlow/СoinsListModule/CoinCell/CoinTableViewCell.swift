@@ -9,10 +9,6 @@ import UIKit
 
 final class CoinTableViewCell: UITableViewCell {
     
-    static var identifier: String {
-        return String(describing: self)
-    }
-    
     // MARK: Subviews
     
     private let nameLabel: UILabel = {
@@ -33,6 +29,12 @@ final class CoinTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    override func prepareForReuse() {
+        nameLabel.text = ""
+        priceUSDLabel.text = ""
+        percentChangeUSD24hLabel.text = ""
+    }
     
     // MARK: Initializers
 

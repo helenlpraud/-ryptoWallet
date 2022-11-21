@@ -14,13 +14,13 @@ extension CoinResponse {
                                                priceUSD: nil,
                                                priceBTC: nil,
                                                percentChangeUSD24h: nil)
-        if let priceUSD = marketData.priceUSD {
+        if let priceUSD = marketData.priceUSD?.rounded(toPlaces: 3) {
             cellModel.priceUSD = String(priceUSD)
         }
-        if let priceBTC = marketData.priceUSD {
+        if let priceBTC = marketData.priceUSD?.rounded(toPlaces: 3) {
             cellModel.priceBTC = String(priceBTC)
         }
-        if let percentChangeUSD24h = marketData.percentChangeUSD24h {
+        if let percentChangeUSD24h = marketData.percentChangeUSD24h?.rounded(toPlaces: 3) {
             cellModel.percentChangeUSD24h = String(percentChangeUSD24h)
         }
         return cellModel
