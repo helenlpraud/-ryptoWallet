@@ -12,7 +12,7 @@ class DetailCardCoinView: UIView {
     enum Constants {
         
         static var offsetTop: Double {
-            return 16.0
+            return 50.0
         }
         
         static var insetLeading: Double {
@@ -50,6 +50,13 @@ class DetailCardCoinView: UIView {
         return label
     }()
     
+    private let priceBTCLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = true
+        return label
+    }()
+    
     private let percentChangeUSD24hLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -63,6 +70,7 @@ class DetailCardCoinView: UIView {
         addContainer()
         container.addArrangedSubview(nameLabel)
         container.addArrangedSubview(priceUSDLabel)
+        container.addArrangedSubview(priceBTCLabel)
         container.addArrangedSubview(percentChangeUSD24hLabel)
     }
     
@@ -97,6 +105,13 @@ class DetailCardCoinView: UIView {
             percentChangeUSD24hLabel.text = "% change USD 24h: " + percentChangeUSD24h
         } else {
             percentChangeUSD24hLabel.isHidden = true
+        }
+        
+        if let priceBTC = model.priceBTC {
+            priceBTCLabel.isHidden = false
+            priceBTCLabel.text = "Price, BTC: " + priceBTC
+        } else {
+            priceBTCLabel.isHidden = true
         }
     }
 }
