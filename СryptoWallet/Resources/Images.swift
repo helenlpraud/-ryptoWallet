@@ -9,7 +9,7 @@ import UIKit
 
 enum Images {
     
-    static var image: UIImage {
-        return UIImage(systemName: "star") ?? UIImage()
+    static var reloadImage: UIImage {
+        return UIImage(systemName: "repeat") ?? UIImage()
     }
 }

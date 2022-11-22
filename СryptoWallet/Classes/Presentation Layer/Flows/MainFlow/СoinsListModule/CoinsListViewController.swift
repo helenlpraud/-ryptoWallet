@@ -18,6 +18,21 @@ protocol CoinsListModule: Presentable {
 final class CoinsListViewController: UIViewController,
                                      CoinsListModule {
     
+    enum Constants {
+        
+        static var reloadButtonSize: Double {
+            return 50.0
+        }
+        
+        static var inset: Double {
+            return -20.0
+        }
+        
+        static var headerHeight: Double {
+            return 100.0
+        }
+    }
+    
     // MARK: Public Properties
     
     var onCoinSelect: ((CoinTableViewCellModel) -> ())?
@@ -49,7 +64,7 @@ final class CoinsListViewController: UIViewController,
         button.layer.cornerRadius = 5.0
         button.layer.borderWidth = 2.0
         button.layer.borderColor = Colors.borderAuth
-        button.setImage(UIImage(systemName: "repeat"), for: .normal)
+        button.setImage(Images.reloadImage, for: .normal)
         button.isHidden = true
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -70,20 +85,10 @@ final class CoinsListViewController: UIViewController,
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            title: "Logout",
-            style: .plain,
-            target: self,
-            action: #selector(logout)
-        )
-        
         reloadButton.addTarget(self, action: #selector(reloadData), for: .touchUpInside)
         
-        addIndicatorView()
-        addReloadButton()
-        addErrorLabel()
-        addTableView()
-        
+        setNavigationItem()
+        addSubviews()
         bindViewModel()
         viewModel?.fetchCoins()
     }
@@ -99,6 +104,22 @@ final class CoinsListViewController: UIViewController,
     @objc
     private func reloadData() {
         viewModel?.fetchCoins()
+    }
+    
+    private func setNavigationItem() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Logout",
+            style: .plain,
+            target: self,
+            action: #selector(logout)
+        )
+    }
+    
+    private func addSubviews() {
+        addIndicatorView()
+        addReloadButton()
+        addErrorLabel()
+        addTableView()
     }
     
     // MARK: Add Subviews
@@ -119,8 +140,8 @@ final class CoinsListViewController: UIViewController,
         NSLayoutConstraint.activate([
             reloadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             reloadButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            reloadButton.heightAnchor.constraint(equalToConstant: 50.0),
-            reloadButton.widthAnchor.constraint(equalToConstant: 50.0)
+            reloadButton.heightAnchor.constraint(equalToConstant: Constants.reloadButtonSize),
+            reloadButton.widthAnchor.constraint(equalToConstant: Constants.reloadButtonSize)
         ])
     }
     
@@ -129,7 +150,7 @@ final class CoinsListViewController: UIViewController,
         
         NSLayoutConstraint.activate([
             errorLabel.centerXAnchor.constraint(equalTo: reloadButton.centerXAnchor),
-            errorLabel.bottomAnchor.constraint(equalTo: reloadButton.topAnchor, constant: -20.0)
+            errorLabel.bottomAnchor.constraint(equalTo: reloadButton.topAnchor, constant: Constants.inset)
         ])
     }
     
@@ -140,7 +161,7 @@ final class CoinsListViewController: UIViewController,
         if let headerVM = viewModel?.headerModel {
             headerView.configure(with: headerVM)
         }
-        headerView.frame = CGRect(x: 0, y: 0, width: view.frame.maxX, height: 100)
+        headerView.frame = CGRect(x: 0, y: 0, width: view.frame.maxX, height: Constants.headerHeight)
         tableView.tableHeaderView = headerView
         view.addSubview(tableView)
         

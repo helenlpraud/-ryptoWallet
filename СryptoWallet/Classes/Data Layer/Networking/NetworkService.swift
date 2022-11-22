@@ -35,8 +35,10 @@ final class NetworkService: NetworkServiceProtocol {
     func getCoin(with request: CoinRequest, completion: @escaping (Result<Response, DataResponseError>) -> Void) {
         guard let baseURL = baseURL else { return }
         let urlRequest = URLRequest(url: baseURL.appending(path: request.path))
+        let parameters = [String: String]()
+        let encodedURLRequest = urlRequest.encode(with: parameters)
         
-        session.dataTask(with: urlRequest, completionHandler: { data, response, error in
+        session.dataTask(with: encodedURLRequest, completionHandler: { data, response, error in
             guard let htttpResponse = response as? HTTPURLResponse,
                   htttpResponse.hasSuccessStatusCode, let data = data else {
                 completion(Result.failure(DataResponseError.network))

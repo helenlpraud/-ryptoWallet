@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F1FF0DA292D3BFE004A15E4 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1FF0D9292D3BFE004A15E4 /* Configurable.swift */; };
 		4F1FF0DC292D4554004A15E4 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1FF0DB292D4554004A15E4 /* Images.swift */; };
+		4F1FF0DF292D5508004A15E4 /* URLRequest+encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1FF0DE292D5508004A15E4 /* URLRequest+encoding.swift */; };
 		4F345AA12918597100BA0849 /* DetailedCardCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345AA02918597100BA0849 /* DetailedCardCoinViewController.swift */; };
 		4F345AA429185DE000BA0849 /* CoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345AA329185DE000BA0849 /* CoinResponse.swift */; };
 		4F345AA8291911D100BA0849 /* CoinsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345AA7291911D100BA0849 /* CoinsListViewController.swift */; };
@@ -63,6 +64,7 @@
 /* Begin PBXFileReference section */
 		4F1FF0D9292D3BFE004A15E4 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		4F1FF0DB292D4554004A15E4 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		4F1FF0DE292D5508004A15E4 /* URLRequest+encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+encoding.swift"; sourceTree = "<group>"; };
 		4F345AA02918597100BA0849 /* DetailedCardCoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCardCoinViewController.swift; sourceTree = "<group>"; };
 		4F345AA329185DE000BA0849 /* CoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinResponse.swift; sourceTree = "<group>"; };
 		4F345AA7291911D100BA0849 /* CoinsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsListViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,23 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		4F1FF0DD292D54E6004A15E4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F1FF0DE292D5508004A15E4 /* URLRequest+encoding.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4F1FF0E0292D5940004A15E4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4FD7F18F29244B5200CF9F10 /* AppRouter.swift */,
+				4FD7F19529244F5600CF9F10 /* NavigationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		4F345A9E291858DA00BA0849 /* СoinsListModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +212,7 @@
 		4F345AB6291AE54400BA0849 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				4F1FF0DD292D54E6004A15E4 /* Extensions */,
 				4F345AC9291BF9BC00BA0849 /* NetworkService.swift */,
 				4F7F3B95291C1986005275A7 /* DataResponseError.swift */,
 				4F345ACB291C0D0100BA0849 /* CoinRequest.swift */,
@@ -319,10 +339,9 @@
 		4FD7F18229242D7C00CF9F10 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				4F1FF0E0292D5940004A15E4 /* Router */,
 				4FD7F18A29242F4A00CF9F10 /* Realization */,
 				4FD7F18529242DCA00CF9F10 /* Protocols */,
-				4FD7F18F29244B5200CF9F10 /* AppRouter.swift */,
-				4FD7F19529244F5600CF9F10 /* NavigationRouter.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -473,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F1FF0DF292D5508004A15E4 /* URLRequest+encoding.swift in Sources */,
 				4FE816A029127E4A00F4B1D9 /* AuthViewController.swift in Sources */,
 				4FD7F19229244D2200CF9F10 /* AuthCoordinator.swift in Sources */,
 				4FD7F1782924157900CF9F10 /* AuthStorage.swift in Sources */,
