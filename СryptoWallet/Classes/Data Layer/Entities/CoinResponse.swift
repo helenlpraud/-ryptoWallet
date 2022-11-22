@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Response: Codable {
+struct Response: Decodable {
     let data: CoinResponse
 }
 
-struct CoinResponse: Codable {
+struct CoinResponse: Decodable {
     let name: String
     let marketData: MarketData
 
@@ -21,7 +21,7 @@ struct CoinResponse: Codable {
     }
 }
 
-struct MarketData: Codable {    
+struct MarketData: Decodable {
     let priceUSD: Double?
     let priceBTC: Double?
     let priceETH: Double?
