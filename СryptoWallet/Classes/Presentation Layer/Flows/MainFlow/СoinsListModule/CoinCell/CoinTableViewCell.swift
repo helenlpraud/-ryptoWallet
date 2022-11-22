@@ -65,9 +65,14 @@ final class CoinTableViewCell: UITableViewCell,
         nameLabel.text = StringsCoins.coinTitle + model.name
         if let priceUSD = model.priceUSD {
             priceUSDLabel.text = StringsCoins.coinPriceUSD + priceUSD
+        } else {
+            priceUSDLabel.text = StringsCoins.coinPriceUSD + StringsCoins.coinValueNotFound
         }
+        
         if let percentChangeUSD24h = model.percentChangeUSD24h {
             percentChangeUSD24hLabel.text = StringsCoins.coinPercentChangeUSD24h + percentChangeUSD24h
+        } else {
+            percentChangeUSD24hLabel.text = StringsCoins.coinPercentChangeUSD24h + StringsCoins.coinValueNotFound
         }
         
         backgroundColor = .white

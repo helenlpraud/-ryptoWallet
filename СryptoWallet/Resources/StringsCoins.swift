@@ -24,4 +24,8 @@ enum StringsCoins {
     static var coinPercentChangeUSD24h: String {
         return "% change USD 24h: "
     }
+    
+    static var coinValueNotFound: String {
+        return "Not found"
+    }
 }
