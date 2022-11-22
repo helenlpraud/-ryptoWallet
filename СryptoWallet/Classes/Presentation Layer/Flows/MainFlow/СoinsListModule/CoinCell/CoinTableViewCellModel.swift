@@ -5,7 +5,15 @@
 //  Created by Shagaeva Elena on 07.11.2022.
 //
 
-class CoinTableViewCellModel {
+protocol CoinTableViewCellModelProtocol {
+    
+    var name: String { get set }
+    var priceUSD: String? { get set }
+    var priceBTC: String? { get set }
+    var percentChangeUSD24h: String? { get set }
+}
+
+final class CoinTableViewCellModel: CoinTableViewCellModelProtocol {
     
     // MARK: Public Properties
     

@@ -6,13 +6,19 @@
 //
 
 protocol AuthCoordinatorProtocol: Coordinator {
+    
+    // MARK: Public Properties
 
     var onFinish: (() -> Void)? { get set }
 }
 
 final class AuthCoordinator: BaseCoordinator, AuthCoordinatorProtocol {
+    
+    // MARK: Public Properties
 
     var onFinish: (() -> Void)?
+    
+    // MARK: Public Functions
 
     override func start() {
         showAuthModule()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailedCardCoinModuleBuilder {
+final class DetailedCardCoinModuleBuilder {
     
     static func createDetailedCardCoinModule(coin: CoinTableViewCellModel) -> UIViewController {
         let controller = DetailedCardCoinViewController()

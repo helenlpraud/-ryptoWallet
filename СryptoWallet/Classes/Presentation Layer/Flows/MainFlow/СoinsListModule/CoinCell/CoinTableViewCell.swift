@@ -12,7 +12,7 @@ final class CoinTableViewCell: UITableViewCell,
     
     // MARK: ViewModel
     
-    typealias ViewModel = CoinTableViewCellModel
+    typealias ViewModel = CoinTableViewCellModelProtocol
     
     // MARK: Subviews
     

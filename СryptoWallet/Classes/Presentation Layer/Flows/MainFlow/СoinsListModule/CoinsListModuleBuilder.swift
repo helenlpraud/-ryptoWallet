@@ -7,11 +7,11 @@
 
 import UIKit
 
-class CoinsListModuleBuilder  {
+final class CoinsListModuleBuilder  {
     
     static func createCoinsListModule() -> CoinsListModule {
         let controller = CoinsListViewController()
-        let requests = Faсtory.createRequests()
+        let requests = RequestsFaсtory.createRequests()
         let viewModel = CoinsListViewModel(requests: requests,
                                            networkService: NetworkService())
         let authServise = AuthService()
@@ -22,7 +22,7 @@ class CoinsListModuleBuilder  {
     }
 }
 
-class Faсtory {
+final class RequestsFaсtory {
     
     static func createRequests() -> [CoinRequest] {
         var coinRequests = [CoinRequest]()

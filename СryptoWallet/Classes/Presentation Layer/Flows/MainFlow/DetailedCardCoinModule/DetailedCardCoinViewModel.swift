@@ -15,7 +15,7 @@ protocol DetailedCardCoinViewModelProtocol {
     init(coin: CoinTableViewCellModel)
 }
 
-class DetailedCardCoinViewModel: DetailedCardCoinViewModelProtocol {
+final class DetailedCardCoinViewModel: DetailedCardCoinViewModelProtocol {
     
     // MARK: Public Properties
     

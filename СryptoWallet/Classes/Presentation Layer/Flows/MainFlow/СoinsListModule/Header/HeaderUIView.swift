@@ -10,9 +10,18 @@ import UIKit
 final class HeaderUIView: UITableViewHeaderFooterView,
                           Configurable {
     
+    //MARK: Constants
+    
+    enum Constants {
+        
+        static var heightSortButton: Double {
+            return 50.0
+        }
+    }
+    
     //MARK: ViewModel
     
-    typealias ViewModel = HeaderUIViewModel
+    typealias ViewModel = HeaderUIViewModelProtocol
     
     // MARK: Initializers
     
@@ -29,7 +38,7 @@ final class HeaderUIView: UITableViewHeaderFooterView,
 
     private let sortButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "gearshape.fill"), for: .normal)
+        button.setImage(Images.sortImage, for: .normal)
         button.tintColor = .black
         button.showsMenuAsPrimaryAction = true
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -44,8 +53,8 @@ final class HeaderUIView: UITableViewHeaderFooterView,
         NSLayoutConstraint.activate([
             sortButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             sortButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            sortButton.heightAnchor.constraint(equalToConstant: 50),
-            sortButton.widthAnchor.constraint(equalToConstant: 50),
+            sortButton.heightAnchor.constraint(equalToConstant: Constants.heightSortButton),
+            sortButton.widthAnchor.constraint(equalToConstant: Constants.heightSortButton),
         ])
     }
     

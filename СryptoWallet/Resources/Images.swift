@@ -12,4 +12,8 @@ enum Images {
     static var reloadImage: UIImage {
         return UIImage(systemName: "repeat") ?? UIImage()
     }
+    
+    static var sortImage: UIImage {
+        return UIImage(systemName: "gearshape.fill") ?? UIImage()
+    }
 }

@@ -9,8 +9,6 @@ import UIKit
 
 final class MainCoordinatorBuilder {
     
-    // MARK: Public Functions
-    
     static func createMainCoordinator() -> MainCoordinatorProtocol {
         let navigationController = UINavigationController()
         let router = NavigationRouter(rootController: navigationController)

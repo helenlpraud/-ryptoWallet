@@ -8,9 +8,6 @@
 import Foundation
 
 struct Coin {
-    
-    // MARK: Public Properties
-    
     let name: String
     var priceUSD: Double?
     var priceBTC: Double?

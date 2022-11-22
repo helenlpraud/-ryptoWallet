@@ -18,4 +18,20 @@ enum StringsAuth {
     static var buttonTitleAuth: String {
         return "Log in"
     }
+    
+    static var invalidLogin: String {
+        return "Incorrect login"
+    }
+    
+    static var invalidPwd: String {
+        return "Incorrect password"
+    }
+    
+    static var invalidInput: String {
+        return "Incorrect input"
+    }
+    
+    static var actionTitle: String {
+        return "OK"
+    }
 }

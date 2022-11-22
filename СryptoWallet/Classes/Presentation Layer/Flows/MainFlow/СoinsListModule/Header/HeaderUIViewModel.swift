@@ -7,18 +7,13 @@
 
 import UIKit
 
-struct UIMenuModel {
+protocol HeaderUIViewModelProtocol {
     
-    let title: String
+    var menuModel: UIMenuModel { get set }
+    var actionsModel: [UIActionModel] { get set }
 }
 
-struct UIActionModel {
-    
-    let title: String
-    let didSelectAction: ((UIAction) -> Void)?
-}
-
-class HeaderUIViewModel {
+final class HeaderUIViewModel: HeaderUIViewModelProtocol {
 
     var menuModel: UIMenuModel
     var actionsModel: [UIActionModel]
@@ -30,4 +25,15 @@ class HeaderUIViewModel {
         self.menuModel = menuModel
         self.actionsModel = actionsModel
     }
+}
+
+struct UIMenuModel {
+    
+    let title: String
+}
+
+struct UIActionModel {
+    
+    let title: String
+    let didSelectAction: ((UIAction) -> Void)?
 }

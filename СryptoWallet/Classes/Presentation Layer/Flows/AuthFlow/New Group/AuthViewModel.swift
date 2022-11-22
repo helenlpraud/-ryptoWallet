@@ -57,15 +57,15 @@ final class AuthViewModel: AuthViewModelProtocol {
     }
     
     private func showAlert(errorType: ErrorType) {
-        let action = Action(title: "OK", style: .standart)
+        let action = Action(title: StringsAuth.actionTitle, style: .standart)
         var alertModel = AlertModel(title: "", message: "", actions: [action])
         switch errorType {
         case .invalidLogin:
-            alertModel.message = "Incorrect login"
+            alertModel.message = StringsAuth.invalidLogin
         case .invalidPwd:
-            alertModel.message = "Incorrect password"
+            alertModel.message = StringsAuth.invalidPwd
         case .invalidData:
-            alertModel.message = "Incorrect input"
+            alertModel.message = StringsAuth.invalidInput
         }
         onShowAlertShowed?(alertModel)
     }

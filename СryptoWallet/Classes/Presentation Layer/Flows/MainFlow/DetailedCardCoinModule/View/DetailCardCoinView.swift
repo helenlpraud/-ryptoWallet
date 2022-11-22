@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailCardCoinView: UIView,
+final class DetailCardCoinView: UIView,
                           Configurable {
     
     //MARK: Constants

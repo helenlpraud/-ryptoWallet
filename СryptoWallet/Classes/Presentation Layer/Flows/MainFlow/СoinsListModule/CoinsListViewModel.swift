@@ -64,13 +64,13 @@ final class CoinsListViewModel: CoinsListViewModelProtocol {
     
     // MARK: Private Properties
     
-    private var coinsForSorting = [Coin]()
-    private var coinsNotForSorting = [CoinTableViewCellModel]()
-    
     private let requests: [CoinRequest]
     private let fetchGroup = DispatchGroup()
     
+    private var coinsForSorting = [Coin]()
+    private var coinsNotForSorting = [CoinTableViewCellModel]()
     private var resultsRequests = [Bool]()
+    
     private var isSuccess: Bool {
         if resultsRequests.contains(false) {
             return false
