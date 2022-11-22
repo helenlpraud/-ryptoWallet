@@ -14,7 +14,8 @@ protocol AuthModule: Presentable {
     var onFinish: (() -> Void)? { get set }
 }
 
-final class AuthViewController: UIViewController, AuthModule {
+final class AuthViewController: UIViewController,
+                                AuthModule {
     
     // MARK: Public Properties
     
@@ -38,13 +39,15 @@ final class AuthViewController: UIViewController, AuthModule {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = Colors.backgroundAuth
+        view.backgroundColor = Colors.backgroundAuth
         view.addSubview(authView)
-        authView.frame = super.view.frame
+        authView.frame = view.frame
         guard let viewModel = viewModel as? AuthViewModel else { return }
         authView.configure(with: viewModel)
         bindViewModel()
     }
+    
+    // MARK: Actions
     
     @objc func keyboardWillShow(notification: NSNotification) {
         viewModel?.keyboardWillShow(notification: notification)
@@ -53,6 +56,8 @@ final class AuthViewController: UIViewController, AuthModule {
     @objc func keyboardWillHide(notification: NSNotification) {
         viewModel?.keyboardWillHide(notification: notification)
     }
+    
+    // MARK: Private Functions
     
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)

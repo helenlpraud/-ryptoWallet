@@ -11,9 +11,9 @@ class BaseCoordinator: Coordinator {
     
     // MARK: Public Properties
 
-    var childCoordinators: [Coordinator] = []
-
     let router: Routable
+    
+    var childCoordinators: [Coordinator] = []
     
     // MARK: Initializer
 
@@ -23,7 +23,7 @@ class BaseCoordinator: Coordinator {
     
     // MARK: Public Functions
 
-    open func start() { }
+    func start() { }
 
     func addDependency(_ coordinator: Coordinator) {
         guard !childCoordinators.contains(where: { $0 === coordinator })

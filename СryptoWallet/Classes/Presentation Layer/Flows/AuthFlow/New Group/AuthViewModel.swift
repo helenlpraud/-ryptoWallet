@@ -11,8 +11,8 @@ protocol AuthViewModelProtocol {
     
     // MARK: Public Functions
     
-    func checkAuthData(currentLogin: String, currentPswd: String) -> Bool
-    func auth(isSuccessChecked: Bool)
+    func checkAuthData(currentLogin: String, currentPswd: String) -> ResultCheking
+    func auth(result: ResultCheking)
     func keyboardWillShow(notification: NSNotification)
     func keyboardWillHide(notification: NSNotification)
     
@@ -42,22 +42,31 @@ final class AuthViewModel: AuthViewModelProtocol {
     
     // MARK: Public Functions
     
-    func checkAuthData(currentLogin: String, currentPswd: String) -> Bool {
-        validationService.checkAuthData(currentLogin: currentLogin, currentPswd: currentPswd)
+    func checkAuthData(currentLogin: String, currentPswd: String) -> ResultCheking {
+        return validationService.checkAuthData(currentLogin: currentLogin, currentPswd: currentPswd)
     }
     
-    func auth(isSuccessChecked: Bool) {
-        if isSuccessChecked {
+    func auth(result: ResultCheking) {
+        if result?.isSuccessChecked == true {
             authService?.auth()
             onFinish?()
         } else {
-            showAlert()
+            guard let errorType = result?.errorType else { return }
+            showAlert(errorType: errorType)
         }
     }
     
-    func showAlert() {
+    private func showAlert(errorType: ErrorType) {
         let action = Action(title: "OK", style: .standart)
-        let alertModel = AlertModel(title: "Incorrect input", message: "Incorrect login or password, please repeat again", actions: [action])
+        var alertModel = AlertModel(title: "", message: "", actions: [action])
+        switch errorType {
+        case .invalidLogin:
+            alertModel.message = "Incorrect login"
+        case .invalidPwd:
+            alertModel.message = "Incorrect password"
+        case .invalidData:
+            alertModel.message = "Incorrect input"
+        }
         onShowAlertShowed?(alertModel)
     }
     
@@ -74,9 +83,8 @@ final class AuthViewModel: AuthViewModelProtocol {
 }
 
 struct AlertModel {
-    
-let title: String
-    let message: String
+    let title: String
+    var message: String
     let actions: [Action]
 }
 

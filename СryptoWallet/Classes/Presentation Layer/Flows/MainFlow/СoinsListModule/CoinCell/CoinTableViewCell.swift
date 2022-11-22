@@ -7,7 +7,12 @@
 
 import UIKit
 
-final class CoinTableViewCell: UITableViewCell {
+final class CoinTableViewCell: UITableViewCell,
+                               Configurable {
+    
+    // MARK: ViewModel
+    
+    typealias ViewModel = CoinTableViewCellModel
     
     // MARK: Subviews
     
@@ -56,7 +61,7 @@ final class CoinTableViewCell: UITableViewCell {
     
     // MARK: Configure
     
-    func configure(with model: CoinTableViewCellModel) {
+    func configure(with model: ViewModel) {
         nameLabel.text = "Coin: " + model.name
         if let priceUSD = model.priceUSD {
             priceUSDLabel.text = "Price, $: " + priceUSD
@@ -64,6 +69,9 @@ final class CoinTableViewCell: UITableViewCell {
         if let percentChangeUSD24h = model.percentChangeUSD24h {
             percentChangeUSD24hLabel.text = "% change USD 24h: " + percentChangeUSD24h
         }
+        
+        backgroundColor = .white
+        selectionStyle = .none
     }
     
     // MARK: Add Subviews

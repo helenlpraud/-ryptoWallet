@@ -7,7 +7,8 @@
 
 import UIKit
 
-final class AuthView: UIScrollView {
+final class AuthView: UIScrollView,
+                      Configurable {
     
     // MARK: Constants
     
@@ -44,7 +45,9 @@ final class AuthView: UIScrollView {
     
     // MARK: ViewModel
     
-    var viewModel: AuthViewModelProtocol?
+    typealias ViewModel = AuthViewModelProtocol
+    
+    var viewModel: ViewModel?
     
     // MARK: Subviews
     
@@ -133,16 +136,12 @@ final class AuthView: UIScrollView {
     private func auth() {
         guard let login = loginTextField.text, let password = passwordTextField.text else { return }
         guard let viewModel = viewModel as? AuthViewModel else { return }
-        let isSuccessChecked =  viewModel.checkAuthData(currentLogin: login,
+        let resultChecking =  viewModel.checkAuthData(currentLogin: login,
                                                         currentPswd: password)
-        viewModel.auth(isSuccessChecked: isSuccessChecked)
+        viewModel.auth(result: resultChecking)
     }
     
-    // MARK: Configure
-    
-    func configure(with viewModel: AuthViewModelProtocol) {
-        self.viewModel = viewModel
-    }
+    // MARK: Functions
     
     func updateForKeyboardWillShowState(height: CGFloat) {
         contentInset.bottom = height
@@ -152,6 +151,12 @@ final class AuthView: UIScrollView {
     func updateForKeyboardWillHideState() {
         contentInset.bottom = .zero
         verticalScrollIndicatorInsets = .zero
+    }
+    
+    // MARK: Configure
+    
+    func configure(with viewModel: ViewModel) {
+        self.viewModel = viewModel
     }
     
     // MARK: Add Subviews

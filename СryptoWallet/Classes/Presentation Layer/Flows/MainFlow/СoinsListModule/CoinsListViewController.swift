@@ -198,7 +198,6 @@ extension CoinsListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CoinTableViewCell.reuseIdentifier, for: indexPath) as? CoinTableViewCell else {
             preconditionFailure("Invalid cell")
         }
-        cell.backgroundColor = .white
         if let cellVM = viewModel?.getCellModel(for: indexPath) {
             cell.configure(with: cellVM)
         }

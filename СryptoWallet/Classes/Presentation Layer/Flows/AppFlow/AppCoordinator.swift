@@ -9,7 +9,8 @@ import Foundation
 
 protocol AppCoordinatorProtocol: Coordinator { }
 
-final class AppCoordinator: BaseCoordinator, AppCoordinatorProtocol {
+final class AppCoordinator: BaseCoordinator,
+                            AppCoordinatorProtocol {
     
     // MARK: Public Properties
     

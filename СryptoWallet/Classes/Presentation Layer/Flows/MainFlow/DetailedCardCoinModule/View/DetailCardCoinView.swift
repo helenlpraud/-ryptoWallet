@@ -7,7 +7,10 @@
 
 import UIKit
 
-class DetailCardCoinView: UIView {
+class DetailCardCoinView: UIView,
+                          Configurable {
+    
+    //MARK: Constants
     
     enum Constants {
         
@@ -26,7 +29,17 @@ class DetailCardCoinView: UIView {
         static var offsetBottom: Double {
             return 20.0
         }
+        
+        static var heightContainer: Double {
+            return 200.0
+        }
     }
+    
+    //MARK: ViewModel
+    
+    typealias ViewModel = DetailedCardCoinViewModelProtocol
+    
+    // MARK: Subviews
     
     private let container: UIStackView = {
         let stack = UIStackView()
@@ -64,6 +77,8 @@ class DetailCardCoinView: UIView {
         return label
     }()
     
+    // MARK: Initializers
+    
     override init(frame: CGRect) {
         super.init(frame: CGRect())
         backgroundColor = .white
@@ -78,6 +93,8 @@ class DetailCardCoinView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Add Subviews
+    
     private func addContainer() {
         addSubview(container)
         
@@ -88,11 +105,13 @@ class DetailCardCoinView: UIView {
                                                 constant: Constants.insetTrailing),
             container.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
                                            constant: Constants.offsetTop),
-            container.heightAnchor.constraint(equalToConstant: 200)
+            container.heightAnchor.constraint(equalToConstant: Constants.heightContainer)
         ])
     }
     
-    func configure(with model: DetailedCardCoinViewModel) {
+    // MARK: Configure
+    
+    func configure(with model: ViewModel) {
         nameLabel.text = "Coin: " + model.name
         if let priceUSD = model.priceUSD {
             priceUSDLabel.isHidden = false

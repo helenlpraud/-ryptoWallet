@@ -7,19 +7,33 @@
 
 import Foundation
 
+typealias ResultCheking = (isSuccessChecked: Bool, errorType: ErrorType?)?
+
+enum ErrorType {
+    case invalidLogin
+    case invalidPwd
+    case invalidData
+}
+
 protocol ValidationServiceProtocol {
     
-    func checkAuthData(currentLogin: String, currentPswd: String) -> Bool
+    func checkAuthData(currentLogin: String, currentPswd: String) -> ResultCheking
 }
 
 final class ValidationService: ValidationServiceProtocol {
     
-    func checkAuthData(currentLogin: String, currentPswd: String) -> Bool {
+    func checkAuthData(currentLogin: String, currentPswd: String) -> ResultCheking {
         if (currentLogin == ValidationConstants.login &&
             currentPswd == ValidationConstants.password) {
-            return true
+            return (true, nil)
+        } else if (currentLogin == ValidationConstants.login &&
+                   currentPswd != ValidationConstants.password) {
+            return (false, .invalidPwd)
+        } else if (currentLogin != ValidationConstants.login &&
+                   currentPswd == ValidationConstants.password)  {
+            return (false, .invalidLogin)
         } else {
-            return false
+            return (false, .invalidData)
         }
     }
 }

@@ -8,16 +8,24 @@
 import UIKit
 
 struct NavigationRouter: Routable {
+    
+    // MARK: Private Properties
 
     private let rootController: UINavigationController
+    
+    // MARK: Public Properties
+    
+    var toPresent: UIViewController? {
+        return rootController
+    }
+    
+    // MARK: Initializer
 
     init(rootController: UINavigationController) {
         self.rootController = rootController
     }
-
-    var toPresent: UIViewController? {
-        return rootController
-    }
+    
+    // MARK: Public Functions
 
     func present(_ module: Presentable?, animated: Bool) {
         guard let controllerToPresent = module?.toPresent else { return }

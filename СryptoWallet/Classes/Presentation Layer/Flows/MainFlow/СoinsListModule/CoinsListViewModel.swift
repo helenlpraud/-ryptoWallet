@@ -87,6 +87,8 @@ final class CoinsListViewModel: CoinsListViewModelProtocol {
         self.networkService = networkService
     }
     
+    // MARK: Public Functions
+    
     func getCellModel(for index: IndexPath) -> CoinTableViewCellModel {
         return cellModels[index.row]
     }

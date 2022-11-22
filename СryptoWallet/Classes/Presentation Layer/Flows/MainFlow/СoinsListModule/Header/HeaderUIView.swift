@@ -7,11 +7,12 @@
 
 import UIKit
 
-final class HeaderUIView: UITableViewHeaderFooterView {
+final class HeaderUIView: UITableViewHeaderFooterView,
+                          Configurable {
     
     //MARK: ViewModel
     
-    var viewModel: HeaderUIViewModel?
+    typealias ViewModel = HeaderUIViewModel
     
     // MARK: Initializers
     
@@ -23,6 +24,8 @@ final class HeaderUIView: UITableViewHeaderFooterView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: Subviews
 
     private let sortButton: UIButton = {
         let button = UIButton()
@@ -32,6 +35,8 @@ final class HeaderUIView: UITableViewHeaderFooterView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    // MARK: Add Subviews
     
     private func addSortButton() {
         addSubview(sortButton)
@@ -43,9 +48,10 @@ final class HeaderUIView: UITableViewHeaderFooterView {
             sortButton.widthAnchor.constraint(equalToConstant: 50),
         ])
     }
+    
+    // MARK: Configure
 
-    func configure(with model: HeaderUIViewModel) {
-        self.viewModel = model
+    func configure(with model: ViewModel) {
         var menuItems = [UIAction]()
         for item in model.actionsModel {
             let title = item.title
