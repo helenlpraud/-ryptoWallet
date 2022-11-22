@@ -115,12 +115,14 @@ final class CoinsListViewController: UIViewController,
     }
     
     private func setNavigationItem() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
+        var buttonItem = UIBarButtonItem(
             title: "Logout",
             style: .plain,
             target: self,
             action: #selector(logout)
         )
+        buttonItem.tintColor = Colors.placeholderAuth
+        navigationItem.leftBarButtonItem = buttonItem
     }
     
     private func addSubviews() {

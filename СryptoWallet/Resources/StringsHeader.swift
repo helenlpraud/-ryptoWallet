@@ -8,7 +8,7 @@
 enum StringsHeader {
     
     static var menuModel: String {
-        return "Start sort"
+        return ""
     }
     
     static var actionLowToHigh: String {

@@ -17,6 +17,10 @@ final class HeaderUIView: UITableViewHeaderFooterView,
         static var heightSortButton: Double {
             return 50.0
         }
+        
+        static var widthSortButton: Double {
+            return 100.0
+        }
     }
     
     // MARK: ViewModel
@@ -38,7 +42,8 @@ final class HeaderUIView: UITableViewHeaderFooterView,
 
     private let sortButton: UIButton = {
         let button = UIButton()
-        button.setImage(Images.sortImage, for: .normal)
+        button.setTitle("Start sort", for: .normal)
+        button.setTitleColor(Colors.placeholderAuth, for: .normal)
         button.tintColor = .black
         button.showsMenuAsPrimaryAction = true
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +59,7 @@ final class HeaderUIView: UITableViewHeaderFooterView,
             sortButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             sortButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             sortButton.heightAnchor.constraint(equalToConstant: Constants.heightSortButton),
-            sortButton.widthAnchor.constraint(equalToConstant: Constants.heightSortButton),
+            sortButton.widthAnchor.constraint(equalToConstant: Constants.widthSortButton),
         ])
     }
     
