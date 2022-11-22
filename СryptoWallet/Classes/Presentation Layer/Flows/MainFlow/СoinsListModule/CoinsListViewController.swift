@@ -31,6 +31,14 @@ final class CoinsListViewController: UIViewController,
         static var headerHeight: Double {
             return 100.0
         }
+        
+        static var cornerRadius: Double {
+            return 5.0
+        }
+        
+        static var borderWidth: Double {
+            return 2.0
+        }
     }
     
     // MARK: Public Properties
@@ -61,8 +69,8 @@ final class CoinsListViewController: UIViewController,
     
     private let reloadButton: UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 5.0
-        button.layer.borderWidth = 2.0
+        button.layer.cornerRadius = Constants.cornerRadius
+        button.layer.borderWidth = Constants.borderWidth
         button.layer.borderColor = Colors.borderAuth
         button.setImage(Images.reloadImage, for: .normal)
         button.isHidden = true

@@ -132,9 +132,6 @@
 		4F02A0F8291F85DB0069AB2E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4FD7F1A4292821D500CF9F10 /* Coin+convertToCellModel.swift */,
-				4FD7F19E2928212000CF9F10 /* CoinsResponse+createCellModel.swift */,
-				4FD7F1A02928215C00CF9F10 /* CoinseResponse+convertToCoin.swift */,
 				4FB2A97B292ACDB200D57CED /* UITableViewCell+reuseIdentifier.swift */,
 				4F7F3B99291C1BDC005275A7 /* HTTPURLResponse + hasSucsessStatusCode.swift */,
 				4FD7F1992927F88600CF9F10 /* Double+toString.swift */,
@@ -168,9 +165,20 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		4F1FF0E1292D664F004A15E4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4FD7F1A4292821D500CF9F10 /* Coin+convertToCellModel.swift */,
+				4FD7F19E2928212000CF9F10 /* CoinsResponse+createCellModel.swift */,
+				4FD7F1A02928215C00CF9F10 /* CoinseResponse+convertToCoin.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4F345A9E291858DA00BA0849 /* СoinsListModule */ = {
 			isa = PBXGroup;
 			children = (
+				4F1FF0E1292D664F004A15E4 /* Extensions */,
 				4F7F3BA1291D50CD005275A7 /* Header */,
 				4F345AB12919274A00BA0849 /* CoinCell */,
 				4F345AA7291911D100BA0849 /* CoinsListViewController.swift */,
