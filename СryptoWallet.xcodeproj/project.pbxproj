@@ -131,29 +131,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4F02A0F8291F85DB0069AB2E /* Extensions */ = {
+		4F02A0F8291F85DB0069AB2E /* Common Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				4FB2A97B292ACDB200D57CED /* UITableViewCell+reuseIdentifier.swift */,
-				4F7F3B99291C1BDC005275A7 /* HTTPURLResponse + hasSucsessStatusCode.swift */,
 				4FD7F1992927F88600CF9F10 /* Double+toString.swift */,
 				4FB2A979292A18AD00D57CED /* Double+rounded.swift */,
 			);
-			path = Extensions;
+			path = "Common Extensions";
 			sourceTree = "<group>";
 		};
-		4F1FF0D8292D3BE8004A15E4 /* Protocols */ = {
+		4F1FF0D8292D3BE8004A15E4 /* Common Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				4F1FF0D9292D3BFE004A15E4 /* Configurable.swift */,
 			);
-			path = Protocols;
+			path = "Common Protocols";
 			sourceTree = "<group>";
 		};
 		4F1FF0DD292D54E6004A15E4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				4F1FF0DE292D5508004A15E4 /* URLRequest+encoding.swift */,
+				4F7F3B99291C1BDC005275A7 /* HTTPURLResponse + hasSucsessStatusCode.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,8 +284,8 @@
 				4F345AA229185DCA00BA0849 /* Data Layer */,
 				4F6F6CB729224352003429DD /* Application Layer */,
 				4FD7F1692923BB5400CF9F10 /* Presentation Layer */,
-				4F1FF0D8292D3BE8004A15E4 /* Protocols */,
-				4F02A0F8291F85DB0069AB2E /* Extensions */,
+				4F1FF0D8292D3BE8004A15E4 /* Common Protocols */,
+				4F02A0F8291F85DB0069AB2E /* Common Extensions */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
