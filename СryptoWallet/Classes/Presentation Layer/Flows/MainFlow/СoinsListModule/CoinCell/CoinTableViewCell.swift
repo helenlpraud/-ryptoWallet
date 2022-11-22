@@ -62,12 +62,12 @@ final class CoinTableViewCell: UITableViewCell,
     // MARK: Configure
     
     func configure(with model: ViewModel) {
-        nameLabel.text = "Coin: " + model.name
+        nameLabel.text = StringsCoins.coinTitle + model.name
         if let priceUSD = model.priceUSD {
-            priceUSDLabel.text = "Price, $: " + priceUSD
+            priceUSDLabel.text = StringsCoins.coinPriceUSD + priceUSD
         }
         if let percentChangeUSD24h = model.percentChangeUSD24h {
-            percentChangeUSD24hLabel.text = "% change USD 24h: " + percentChangeUSD24h
+            percentChangeUSD24hLabel.text = StringsCoins.coinPercentChangeUSD24h + percentChangeUSD24h
         }
         
         backgroundColor = .white

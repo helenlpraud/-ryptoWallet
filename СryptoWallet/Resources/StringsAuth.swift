@@ -20,7 +20,7 @@ enum StringsAuth {
     }
     
     static var invalidLogin: String {
-        return "Incorrect login"
+        return "User is not found"
     }
     
     static var invalidPwd: String {

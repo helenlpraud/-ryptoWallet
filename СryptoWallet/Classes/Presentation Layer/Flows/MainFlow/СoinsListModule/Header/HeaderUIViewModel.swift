@@ -14,11 +14,15 @@ protocol HeaderUIViewModelProtocol {
 }
 
 final class HeaderUIViewModel: HeaderUIViewModelProtocol {
+    
+    // MARK: Public Properties
 
     var menuModel: UIMenuModel
     var actionsModel: [UIActionModel]
     var buttonHeigh = 50.0
     var buttonWidth = 50.0
+    
+    // MARK: Initializer
 
     init(menuModel: UIMenuModel,
          actionsModel: [UIActionModel]) {

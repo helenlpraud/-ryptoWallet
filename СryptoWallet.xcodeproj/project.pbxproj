@@ -10,6 +10,7 @@
 		4F1FF0DA292D3BFE004A15E4 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1FF0D9292D3BFE004A15E4 /* Configurable.swift */; };
 		4F1FF0DC292D4554004A15E4 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1FF0DB292D4554004A15E4 /* Images.swift */; };
 		4F1FF0DF292D5508004A15E4 /* URLRequest+encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1FF0DE292D5508004A15E4 /* URLRequest+encoding.swift */; };
+		4F1FF0E5292D7284004A15E4 /* StringsCoins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1FF0E4292D7284004A15E4 /* StringsCoins.swift */; };
 		4F345AA12918597100BA0849 /* DetailedCardCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345AA02918597100BA0849 /* DetailedCardCoinViewController.swift */; };
 		4F345AA429185DE000BA0849 /* CoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345AA329185DE000BA0849 /* CoinResponse.swift */; };
 		4F345AA8291911D100BA0849 /* CoinsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345AA7291911D100BA0849 /* CoinsListViewController.swift */; };
@@ -65,6 +66,7 @@
 		4F1FF0D9292D3BFE004A15E4 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		4F1FF0DB292D4554004A15E4 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		4F1FF0DE292D5508004A15E4 /* URLRequest+encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+encoding.swift"; sourceTree = "<group>"; };
+		4F1FF0E4292D7284004A15E4 /* StringsCoins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsCoins.swift; sourceTree = "<group>"; };
 		4F345AA02918597100BA0849 /* DetailedCardCoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCardCoinViewController.swift; sourceTree = "<group>"; };
 		4F345AA329185DE000BA0849 /* CoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinResponse.swift; sourceTree = "<group>"; };
 		4F345AA7291911D100BA0849 /* CoinsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsListViewController.swift; sourceTree = "<group>"; };
@@ -168,11 +170,27 @@
 		4F1FF0E1292D664F004A15E4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4FD7F1A4292821D500CF9F10 /* Coin+convertToCellModel.swift */,
+				4F1FF0E3292D7246004A15E4 /* Coin */,
+				4F1FF0E2292D7233004A15E4 /* CoinsResponse */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4F1FF0E2292D7233004A15E4 /* CoinsResponse */ = {
+			isa = PBXGroup;
+			children = (
 				4FD7F19E2928212000CF9F10 /* CoinsResponse+createCellModel.swift */,
 				4FD7F1A02928215C00CF9F10 /* CoinseResponse+convertToCoin.swift */,
 			);
-			path = Extensions;
+			path = CoinsResponse;
+			sourceTree = "<group>";
+		};
+		4F1FF0E3292D7246004A15E4 /* Coin */ = {
+			isa = PBXGroup;
+			children = (
+				4FD7F1A4292821D500CF9F10 /* Coin+convertToCellModel.swift */,
+			);
+			path = Coin;
 			sourceTree = "<group>";
 		};
 		4F345A9E291858DA00BA0849 /* СoinsListModule */ = {
@@ -238,6 +256,7 @@
 				4F6F6CB329223DA7003429DD /* StringsHeader.swift */,
 				4F6F6CB529223F42003429DD /* StringsNetwork.swift */,
 				4F1FF0DB292D4554004A15E4 /* Images.swift */,
+				4F1FF0E4292D7284004A15E4 /* StringsCoins.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -505,6 +524,7 @@
 				4FD7F19229244D2200CF9F10 /* AuthCoordinator.swift in Sources */,
 				4FD7F1782924157900CF9F10 /* AuthStorage.swift in Sources */,
 				4F7F3B9A291C1BDC005275A7 /* HTTPURLResponse + hasSucsessStatusCode.swift in Sources */,
+				4F1FF0E5292D7284004A15E4 /* StringsCoins.swift in Sources */,
 				4F345AB32919277A00BA0849 /* CoinTableViewCellModel.swift in Sources */,
 				4FD7F17A29241A8A00CF9F10 /* ValidationService.swift in Sources */,
 				4F7F3B96291C1986005275A7 /* DataResponseError.swift in Sources */,

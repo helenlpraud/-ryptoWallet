@@ -112,23 +112,23 @@ final class DetailCardCoinView: UIView,
     // MARK: Configure
     
     func configure(with model: ViewModel) {
-        nameLabel.text = "Coin: " + model.name
+        nameLabel.text = StringsCoins.coinTitle + model.name
         if let priceUSD = model.priceUSD {
             priceUSDLabel.isHidden = false
-            priceUSDLabel.text = "Price, $: " + priceUSD
+            priceUSDLabel.text = StringsCoins.coinPriceUSD + priceUSD
         } else {
             priceUSDLabel.isHidden = true
         }
         if let percentChangeUSD24h = model.percentChangeUSD24h {
             percentChangeUSD24hLabel.isHidden = false
-            percentChangeUSD24hLabel.text = "% change USD 24h: " + percentChangeUSD24h
+            percentChangeUSD24hLabel.text = StringsCoins.coinPercentChangeUSD24h + percentChangeUSD24h
         } else {
             percentChangeUSD24hLabel.isHidden = true
         }
         
         if let priceBTC = model.priceBTC {
             priceBTCLabel.isHidden = false
-            priceBTCLabel.text = "Price, BTC: " + priceBTC
+            priceBTCLabel.text = StringsCoins.coinPriceBTC + priceBTC
         } else {
             priceBTCLabel.isHidden = true
         }

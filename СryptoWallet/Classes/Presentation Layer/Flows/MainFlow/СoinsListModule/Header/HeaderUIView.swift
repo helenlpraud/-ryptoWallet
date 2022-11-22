@@ -19,7 +19,7 @@ final class HeaderUIView: UITableViewHeaderFooterView,
         }
     }
     
-    //MARK: ViewModel
+    // MARK: ViewModel
     
     typealias ViewModel = HeaderUIViewModelProtocol
     

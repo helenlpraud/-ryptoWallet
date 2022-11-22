@@ -6,8 +6,6 @@
 //
 
 protocol MainCoordinatorProtocol: Coordinator {
-    
-    // MARK: Public properties
 
     var onLogout: (() -> Void)? { get set }
 }
