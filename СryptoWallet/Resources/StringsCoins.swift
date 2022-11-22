@@ -26,6 +26,6 @@ enum StringsCoins {
     }
     
     static var coinValueNotFound: String {
-        return "Not found"
+        return "No Data"
     }
 }
