@@ -4,8 +4,6 @@
 //
 //  Created by Shagaeva Elena on 09.11.2022.
 //
-
-import Foundation
 import UIKit
 
 protocol CoinsListViewModelProtocol {
@@ -119,13 +117,10 @@ final class CoinsListViewModel: CoinsListViewModelProtocol {
             switch result {
             case.failure(let error):
                 self?.resultsRequests.append(false)
-                DispatchQueue.main.async {
                     self?.didFetchFail?(error.reason)
                     self?.fetchGroup.leave()
-                }
             case .success(let response):
                 self?.resultsRequests.append(true)
-                DispatchQueue.main.async { [weak self] in
                     let cellModel = response.data.createCellModel()
                     self?.cellModels.append(cellModel)
                     if let coin = response.data.convertToCoin() {
@@ -135,7 +130,6 @@ final class CoinsListViewModel: CoinsListViewModelProtocol {
                     }
                     self?.fetchGroup.leave()
                 }
-            }
         }
     }
     

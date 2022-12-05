@@ -115,7 +115,7 @@ final class CoinsListViewController: UIViewController,
     }
     
     private func setNavigationItem() {
-        var buttonItem = UIBarButtonItem(
+        let buttonItem = UIBarButtonItem(
             title: "Logout",
             style: .plain,
             target: self,
@@ -187,28 +187,22 @@ final class CoinsListViewController: UIViewController,
     
     private func bindViewModel() {
         viewModel?.didFetchFail = { [weak self] reason in
-            DispatchQueue.main.async {
                 self?.indicatorView.stopAnimating()
                 self?.errorLabel.text = reason
                 self?.errorLabel.isHidden = false
                 self?.reloadButton.isHidden = false
-            }
         }
         
         viewModel?.didFetchSucces = { [weak self] in
-            DispatchQueue.main.async {
                 self?.indicatorView.stopAnimating()
                 self?.errorLabel.isHidden = true
                 self?.reloadButton.isHidden = true
                 self?.tableView.isHidden = false
                 self?.tableView.reloadData()
-            }
         }
         
         viewModel?.didReloadTableView = { [weak self] in
-            DispatchQueue.main.async {
                 self?.tableView.reloadData()
-            }
         }
         
         viewModel?.didSelectCoin = { [weak self] coin in

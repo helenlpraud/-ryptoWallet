@@ -34,23 +34,29 @@ final class NetworkService: NetworkServiceProtocol {
     
     func getCoin(with request: CoinRequest, completion: @escaping (Result<Response, DataResponseError>) -> Void) {
         guard let baseURL = baseURL else { return }
-        let urlRequest = URLRequest(url: baseURL.appending(path: request.path))
+        let urlRequest = URLRequest(url: baseURL.appendingPathComponent(request.path))
         let parameters = [String: String]()
         let encodedURLRequest = urlRequest.encode(with: parameters)
         
         session.dataTask(with: encodedURLRequest, completionHandler: { data, response, error in
-            guard let htttpResponse = response as? HTTPURLResponse,
-                  htttpResponse.hasSuccessStatusCode, let data = data else {
-                completion(Result.failure(DataResponseError.network))
-                return
+            // #error а не проще сделать сдесь переход на мейн очередь
+            // и не делать его в 10 других местах?
+            DispatchQueue.main.async {
+                guard
+                    let htttpResponse = response as? HTTPURLResponse,
+                    htttpResponse.hasSuccessStatusCode,
+                    let data = data
+                else {
+                    completion(Result.failure(DataResponseError.network))
+                    return
+                }
+                
+                guard let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) else {
+                    completion(Result.failure(DataResponseError.decoding))
+                    return
+                }
+                completion(Result.success(decodedResponse))
             }
-            
-            guard let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) else {
-                completion(Result.failure(DataResponseError.decoding))
-                return
-            }
-            
-            completion(Result.success(decodedResponse))
         }).resume()
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 typealias ResultCheking = (isSuccessChecked: Bool, errorType: ErrorType?)?
 

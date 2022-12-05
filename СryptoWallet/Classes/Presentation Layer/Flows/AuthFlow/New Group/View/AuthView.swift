@@ -134,11 +134,11 @@ final class AuthView: UIScrollView,
     
     @objc
     private func auth() {
-        guard let login = loginTextField.text, let password = passwordTextField.text else { return }
+        guard let login = loginTextField.text,
+              let password = passwordTextField.text else { return }
         guard let viewModel = viewModel as? AuthViewModel else { return }
-        let resultChecking =  viewModel.checkAuthData(currentLogin: login,
-                                                        currentPswd: password)
-        viewModel.auth(result: resultChecking)
+        let state = viewModel.getStateInput(login: login, password: password)
+        viewModel.processInput(state: state, login: login, password: password)
     }
     
     // MARK: Functions
@@ -157,6 +157,15 @@ final class AuthView: UIScrollView,
     
     func configure(with viewModel: ViewModel) {
         self.viewModel = viewModel
+    }
+    
+    func updateRecognizer(with state: StateInputForProcessing) {
+        switch state {
+        case .passwordFieldIsEmpty:
+            passwordTextField.becomeFirstResponder()
+        case .loginIsEmpty:
+            loginTextField.becomeFirstResponder()
+        }
     }
     
     // MARK: Add Subviews

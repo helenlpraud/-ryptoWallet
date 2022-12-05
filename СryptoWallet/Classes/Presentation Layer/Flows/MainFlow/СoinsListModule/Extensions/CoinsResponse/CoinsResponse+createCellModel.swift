@@ -10,19 +10,13 @@ import Foundation
 extension CoinResponse {
     
     func createCellModel() -> CoinTableViewCellModel {
+        let priceUSD = marketData.priceUSD?.rounded(toPlaces: 3).toString()
+        let priceBTC = marketData.priceBTC?.rounded(toPlaces: 3).toString()
+        let percentChangeUSD24h = marketData.percentChangeUSD24h?.rounded(toPlaces: 3).toString()
         let cellModel = CoinTableViewCellModel(name: name,
-                                               priceUSD: nil,
-                                               priceBTC: nil,
-                                               percentChangeUSD24h: nil)
-        if let priceUSD = marketData.priceUSD?.rounded(toPlaces: 3) {
-            cellModel.priceUSD = String(priceUSD)
-        }
-        if let priceBTC = marketData.priceBTC?.rounded(toPlaces: 3) {
-            cellModel.priceBTC = String(priceBTC)
-        }
-        if let percentChangeUSD24h = marketData.percentChangeUSD24h?.rounded(toPlaces: 3) {
-            cellModel.percentChangeUSD24h = String(percentChangeUSD24h)
-        }
+                                               priceUSD: priceUSD,
+                                               priceBTC: priceBTC,
+                                               percentChangeUSD24h: percentChangeUSD24h)
         return cellModel
     }
 }

@@ -11,11 +11,16 @@ final class AuthModuleBuilder {
     
     static func createAuthModule() -> AuthModule {
         let controller = AuthViewController()
-        let validationService = ValidationService()
-        let viewModel = AuthViewModel(validationService: validationService)
+        let viewModel = AuthViewModel()
         let authServise = AuthService()
+        let validationService = ValidationService()
+        let alertPresentationService = AlertPresentationService()
+        let processingInputService = ProcessingInputService()
         authServise.storage = AuthStorage()
         viewModel.authService = authServise
+        viewModel.validationService = validationService
+        viewModel.processingInputService = processingInputService
+        viewModel.alertPresentationService = alertPresentationService
         controller.viewModel = viewModel
         return controller
     }

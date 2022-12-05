@@ -36,6 +36,7 @@ final class CoinTableViewCell: UITableViewCell,
     }()
     
     override func prepareForReuse() {
+        super.prepareForReuse()
         nameLabel.text = ""
         priceUSDLabel.text = ""
         percentChangeUSD24hLabel.text = ""

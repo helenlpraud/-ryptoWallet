@@ -10,17 +10,13 @@ import Foundation
 extension Coin {
     
     func convertToCellModel() -> CoinTableViewCellModel {
+        let priceUSD = priceUSD?.rounded(toPlaces: 3).toString()
+        let priceBTC = priceBTC?.rounded(toPlaces: 3).toString()
+        let percentChangeUSD24h = percentChangeUSD24h.toString()
         let cellModel = CoinTableViewCellModel(name: name,
-                                               priceUSD: nil,
-                                               priceBTC: nil,
-                                               percentChangeUSD24h: nil)
-        if let priceUSD = priceUSD?.rounded(toPlaces: 3) {
-            cellModel.priceUSD = priceUSD.toString()
-        }
-        if let priceBTC = priceBTC?.rounded(toPlaces: 3) {
-            cellModel.priceBTC = priceBTC.toString()
-        }
-        cellModel.percentChangeUSD24h = percentChangeUSD24h.toString()
+                                               priceUSD: priceUSD,
+                                               priceBTC: priceBTC,
+                                               percentChangeUSD24h: percentChangeUSD24h)
         return cellModel
     }
 }
