@@ -39,8 +39,6 @@ final class NetworkService: NetworkServiceProtocol {
         let encodedURLRequest = urlRequest.encode(with: parameters)
         
         session.dataTask(with: encodedURLRequest, completionHandler: { data, response, error in
-            // #error а не проще сделать сдесь переход на мейн очередь
-            // и не делать его в 10 других местах?
             DispatchQueue.main.async {
                 guard
                     let htttpResponse = response as? HTTPURLResponse,

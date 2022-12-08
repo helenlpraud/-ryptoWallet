@@ -13,7 +13,7 @@ typealias ResultCheking = (isSuccessChecked: Bool, errorType: ErrorType?)?
 enum ErrorType {
     case invalidLogin
     case invalidPwd
-    case invalidData
+    case invalidInput
 }
 
 protocol ValidationServiceProtocol {
@@ -34,7 +34,7 @@ final class ValidationService: ValidationServiceProtocol {
                    currentPswd == ValidationConstants.password)  {
             return (false, .invalidLogin)
         } else {
-            return (false, .invalidData)
+            return (false, .invalidInput)
         }
     }
 }

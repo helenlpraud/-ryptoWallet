@@ -15,6 +15,7 @@ final class _ryptoWalletTests: XCTestCase {
     var authStateProvider: AuthStateProvider!
     var authService: AuthServiceProtocol!
     var processingInputService: ProcessingInputServiceProtocol!
+    var alertPresentationService: AlertPresentationServiceProtocol!
 
     override func setUpWithError() throws {
         validationService = ValidationService()
@@ -23,6 +24,7 @@ final class _ryptoWalletTests: XCTestCase {
         authStateProvider = authService
         self.authService = authService
         processingInputService = ProcessingInputService()
+        alertPresentationService = AlertPresentationService()
     }
 
     override func tearDownWithError() throws {
@@ -30,7 +32,51 @@ final class _ryptoWalletTests: XCTestCase {
         authService = nil
         authStateProvider = nil
         processingInputService = nil
+        alertPresentationService = nil
     }
+    
+    //alertPresentationService
+    
+    func testShowAlertInvalidLogin() throws {
+        let error = ErrorType.invalidLogin
+        let title: String = ""
+        let message: String = StringsAuth.invalidLogin
+        let actions: [Action] = [Action(title: StringsAuth.actionTitle, style: .standart)]
+        let extectedResultModel = AlertModel(title: title, message: message, actions: actions)
+        var validateResultModel: AlertModel
+        
+        validateResultModel = alertPresentationService.showAlert(errorType: error)
+        
+        XCTAssertEqual(extectedResultModel, validateResultModel)
+    }
+    
+    func testShowAlertInvalidPwd() throws {
+        let error = ErrorType.invalidPwd
+        let title: String = ""
+        let message: String = StringsAuth.invalidPwd
+        let actions: [Action] = [Action(title: StringsAuth.actionTitle, style: .standart)]
+        let extectedResultModel = AlertModel(title: title, message: message, actions: actions)
+        var validateResultModel: AlertModel
+        
+        validateResultModel = alertPresentationService.showAlert(errorType: error)
+        
+        XCTAssertEqual(extectedResultModel, validateResultModel)
+    }
+    
+    func testShowAlertInvalidInput() throws {
+        let error = ErrorType.invalidInput
+        let title: String = ""
+        let message: String = StringsAuth.invalidInput
+        let actions: [Action] = [Action(title: StringsAuth.actionTitle, style: .standart)]
+        let extectedResultModel = AlertModel(title: title, message: message, actions: actions)
+        var validateResultModel: AlertModel
+        
+        validateResultModel = alertPresentationService.showAlert(errorType: error)
+        
+        XCTAssertEqual(extectedResultModel, validateResultModel)
+    }
+    
+    //processingInputService
     
     func testCheckStateForFilledPasswordAndLogin() throws {
         let login = "fff"
@@ -76,6 +122,8 @@ final class _ryptoWalletTests: XCTestCase {
         XCTAssertEqual(expectedResultAuth, validateResultAuth)
     }
     
+    //authService
+    
     func testCheckAuthSuccessResult() throws {
         let expectedResultAuth = true
         var validateResultAuth: Bool
@@ -95,11 +143,13 @@ final class _ryptoWalletTests: XCTestCase {
         
         XCTAssertEqual(expectedResultAuth, validateResultAuth)
     }
+    
+    //validationService
 
     func testValidationWithEmptyValues() throws {
         let login = String()
         let password = String()
-        let expectedResult = ResultCheking((false, .invalidData))
+        let expectedResult = ResultCheking((false, .invalidInput))
         var validateResult: ResultCheking
         
         validateResult = validationService.checkAuthData(currentLogin: login, currentPswd: password)
@@ -111,7 +161,7 @@ final class _ryptoWalletTests: XCTestCase {
     func testValidationWithIncorrectLoginAndPassword() throws {
         let login = "fhhfdfj"
         let password = "1dsf"
-        let expectedResult = ResultCheking((false, .invalidData))
+        let expectedResult = ResultCheking((false, .invalidInput))
         var validateResult: ResultCheking
         
         validateResult = validationService.checkAuthData(currentLogin: login, currentPswd: password)

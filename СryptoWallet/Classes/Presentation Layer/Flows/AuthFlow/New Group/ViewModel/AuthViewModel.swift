@@ -56,7 +56,7 @@ final class AuthViewModel: AuthViewModelProtocol {
                                            currentPswd: password)
         switch state {
         case .fieldsAreEmpty:
-            showAlert(errorType: .invalidData)
+            showAlert(errorType: .invalidInput)
         case .fieldsAreFilled:
             onFieldsAreFilled?()
             auth(result: resultChecking)
@@ -86,19 +86,4 @@ final class AuthViewModel: AuthViewModelProtocol {
         guard let alertModel = alertPresentationService?.showAlert(errorType: errorType) else { return }
         onShowAlertShowed?(alertModel)
     }
-}
-
-struct AlertModel {
-    let title: String
-    var message: String
-    let actions: [Action]
-}
-
-struct Action {
-    let title: String
-    let style: AlertActionsStyle
-}
-
-enum AlertActionsStyle {
-    case standart
 }

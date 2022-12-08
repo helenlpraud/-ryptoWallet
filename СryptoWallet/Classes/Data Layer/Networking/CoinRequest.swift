@@ -8,9 +8,7 @@
 struct CoinRequest {
     
     // MARK: Public Properties
-
-    // #error в целом подход правильный, но не проще assets/$0/metrics
-    // вынести а за место $0 подставлять .rawValue
+    
     let typeCoin: TypeCoin
     
     var path: String {

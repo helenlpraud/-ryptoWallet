@@ -20,9 +20,31 @@ class AlertPresentationService: AlertPresentationServiceProtocol {
             alertModel.message = StringsAuth.invalidLogin
         case .invalidPwd:
             alertModel.message = StringsAuth.invalidPwd
-        case .invalidData:
+        case .invalidInput:
             alertModel.message = StringsAuth.invalidInput
         }
         return alertModel
     }
+}
+
+struct AlertModel: Equatable {
+    
+    static func == (lhs: AlertModel, rhs: AlertModel) -> Bool {
+        lhs.title == rhs.title &&
+        lhs.message == rhs.message &&
+        lhs.actions == rhs.actions
+    }
+    
+    var title: String
+    var message: String
+    var actions: [Action]
+}
+
+struct Action: Equatable {
+    let title: String
+    let style: AlertActionsStyle
+}
+
+enum AlertActionsStyle {
+    case standart
 }
