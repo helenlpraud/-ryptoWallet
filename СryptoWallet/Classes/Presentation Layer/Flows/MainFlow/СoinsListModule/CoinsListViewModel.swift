@@ -83,19 +83,6 @@ final class CoinsListViewModel: CoinsListViewModelProtocol {
         setHeaderModel()
     }
     
-    private func setHeaderModel() {
-        let menu = UIMenuModel(title: StringsHeader.menuModel)
-        let firstAction = UIActionModel(title: StringsHeader.actionLowToHigh) { [weak self] _ in
-            self?.getSortedModels(typeSort: .fromLow)
-            self?.changeStateHeader(stateHeader: .sortFromLow)
-        }
-        let twoAction = UIActionModel(title: StringsHeader.actionHighToLow) { [weak self] _ in
-            self?.getSortedModels(typeSort: .fromHigh)
-            self?.changeStateHeader(stateHeader: .sortFromHigh)
-        }
-        headerModel = HeaderUIViewModel(menuModel: menu, actionsModel: [firstAction, twoAction])
-    }
-    
     // MARK: Public Functions
     
     func getCellModel(for index: IndexPath) -> CoinTableViewCellModel {
@@ -121,6 +108,19 @@ final class CoinsListViewModel: CoinsListViewModelProtocol {
     }
     
     // MARK: Private Functions
+    
+    private func setHeaderModel() {
+        let menu = UIMenuModel(title: StringsHeader.menuModel)
+        let firstAction = UIActionModel(title: StringsHeader.actionLowToHigh) { [weak self] _ in
+            self?.getSortedModels(typeSort: .fromLow)
+            self?.changeStateHeader(stateHeader: .sortFromLow)
+        }
+        let twoAction = UIActionModel(title: StringsHeader.actionHighToLow) { [weak self] _ in
+            self?.getSortedModels(typeSort: .fromHigh)
+            self?.changeStateHeader(stateHeader: .sortFromHigh)
+        }
+        headerModel = HeaderUIViewModel(menuModel: menu, actionsModel: [firstAction, twoAction])
+    }
     
     private func fetchCoin(request: CoinRequest) {
         fetchGroup.enter()
