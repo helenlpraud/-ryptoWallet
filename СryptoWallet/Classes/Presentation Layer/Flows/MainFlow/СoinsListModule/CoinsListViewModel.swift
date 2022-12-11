@@ -7,11 +7,6 @@
 
 import Foundation
 
-enum StateHeader {
-    case sortFromLow
-    case sortFromHigh
-}
-
 protocol CoinsListViewModelProtocol {
     
     var cellModels: [CoinTableViewCellModel] { get set }

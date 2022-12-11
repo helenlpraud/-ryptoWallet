@@ -18,4 +18,12 @@ enum StringsHeader {
     static var actionHighToLow: String {
         return "From high change % to low"
     }
+    
+    static var sortButtonInitialTitle: String {
+        return "Start sort"
+    }
+    
+    static var sortButtonSortedTitle: String {
+        return "% change USD 24H"
+    }
 }

@@ -42,7 +42,7 @@ final class HeaderUIView: UITableViewHeaderFooterView,
     
     private let sortButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Start sort", for: .normal)
+        button.setTitle(StringsHeader.sortButtonInitialTitle, for: .normal)
         button.setTitleColor(Colors.placeholderAuth, for: .normal)
         button.tintColor = .black
         button.showsMenuAsPrimaryAction = true
@@ -81,11 +81,11 @@ final class HeaderUIView: UITableViewHeaderFooterView,
     func changeState(stateHeader: StateHeader) {
         switch stateHeader {
         case .sortFromLow:
-            sortButton.setTitle("% change USD 24H", for: .normal)
-            sortButton.setImage(UIImage(systemName: "arrow.up"), for: .normal)
+            sortButton.setTitle(StringsHeader.sortButtonSortedTitle, for: .normal)
+            sortButton.setImage(Images.sotButtonSortedUp, for: .normal)
         case .sortFromHigh:
-            sortButton.setTitle("% change USD 24H", for: .normal)
-            sortButton.setImage(UIImage(systemName: "arrow.down"), for: .normal)
+            sortButton.setTitle(StringsHeader.sortButtonSortedTitle, for: .normal)
+            sortButton.setImage(Images.sotButtonSortedDown, for: .normal)
         }
     }
 }
