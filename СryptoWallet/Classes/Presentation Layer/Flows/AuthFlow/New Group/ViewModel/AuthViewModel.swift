@@ -5,8 +5,6 @@
 //  Created by Shagaeva Elena on 03.11.2022.
 //
 
-import UIKit
-
 enum StateInputAuth {
     case fieldsAreEmpty
     case fieldsAreFilled

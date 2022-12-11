@@ -5,17 +5,19 @@
 //  Created by Shagaeva Elena on 10.11.2022.
 //
 
-import UIKit
-
 protocol HeaderUIViewModelProtocol {
     
     var menuModel: UIMenuModel { get set }
     var actionsModel: [UIActionModel] { get set }
+    
+    var didChangeStateHeader: ((StateHeader) -> (Void))? { get set }
 }
 
 final class HeaderUIViewModel: HeaderUIViewModelProtocol {
     
     // MARK: Public Properties
+    
+    var didChangeStateHeader: ((StateHeader) -> (Void))?
 
     var menuModel: UIMenuModel
     var actionsModel: [UIActionModel]
@@ -29,15 +31,8 @@ final class HeaderUIViewModel: HeaderUIViewModelProtocol {
         self.menuModel = menuModel
         self.actionsModel = actionsModel
     }
-}
-
-struct UIMenuModel {
     
-    let title: String
-}
-
-struct UIActionModel {
-    
-    let title: String
-    let didSelectAction: ((UIAction) -> Void)?
+    func changeStateHeader(stateHeader: StateHeader) {
+        didChangeStateHeader?(stateHeader)
+    }
 }

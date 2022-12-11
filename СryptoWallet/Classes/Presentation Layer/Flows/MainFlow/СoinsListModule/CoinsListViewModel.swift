@@ -4,12 +4,18 @@
 //
 //  Created by Shagaeva Elena on 09.11.2022.
 //
-import UIKit
+
+import Foundation
+
+enum StateHeader {
+    case sortFromLow
+    case sortFromHigh
+}
 
 protocol CoinsListViewModelProtocol {
     
     var cellModels: [CoinTableViewCellModel] { get set }
-    var headerModel: HeaderUIViewModel { get }
+    var headerModel: HeaderUIViewModel? { get }
     var heightForRow: CGFloat { get set }
     
     var didReloadTableView: (() -> Void)? { get set }
@@ -36,7 +42,6 @@ final class CoinsListViewModel: CoinsListViewModelProtocol {
     var didFetchFail: ((String) -> Void)?
     var didReloadTableView: (() -> Void)?
     var didSelectCoin: ((CoinTableViewCellModel) -> Void)?
-    var didSelectAction: ((UIAction) -> Void)?
     
     // MARK: Services
     
@@ -47,16 +52,7 @@ final class CoinsListViewModel: CoinsListViewModelProtocol {
     
     var cellModels: [CoinTableViewCellModel] = []
     
-    var headerModel: HeaderUIViewModel {
-        let menu = UIMenuModel(title: StringsHeader.menuModel)
-        let firstAction = UIActionModel(title: StringsHeader.actionLowToHigh) { [weak self] _ in
-            self?.getSortedModels(typeSort: .fromLow)
-        }
-        let twoAction = UIActionModel(title: StringsHeader.actionHighToLow) { [weak self] _ in
-            self?.getSortedModels(typeSort: .fromHigh)
-        }
-        return HeaderUIViewModel(menuModel: menu, actionsModel: [firstAction, twoAction])
-    }
+    var headerModel: HeaderUIViewModel?
     
     var heightForRow: CGFloat = 130.0
     
@@ -83,6 +79,21 @@ final class CoinsListViewModel: CoinsListViewModelProtocol {
          networkService: NetworkServiceProtocol) {
         self.requests = requests
         self.networkService = networkService
+        
+        setHeaderModel()
+    }
+    
+    private func setHeaderModel() {
+        let menu = UIMenuModel(title: StringsHeader.menuModel)
+        let firstAction = UIActionModel(title: StringsHeader.actionLowToHigh) { [weak self] _ in
+            self?.getSortedModels(typeSort: .fromLow)
+            self?.changeStateHeader(stateHeader: .sortFromLow)
+        }
+        let twoAction = UIActionModel(title: StringsHeader.actionHighToLow) { [weak self] _ in
+            self?.getSortedModels(typeSort: .fromHigh)
+            self?.changeStateHeader(stateHeader: .sortFromHigh)
+        }
+        headerModel = HeaderUIViewModel(menuModel: menu, actionsModel: [firstAction, twoAction])
     }
     
     // MARK: Public Functions
@@ -167,5 +178,9 @@ final class CoinsListViewModel: CoinsListViewModelProtocol {
                 self?.didFetchSucces?()
             }
         }
+    }
+    
+    private func changeStateHeader(stateHeader: StateHeader) {
+        headerModel?.changeStateHeader(stateHeader: stateHeader)
     }
 }

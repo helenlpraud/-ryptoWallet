@@ -72,13 +72,6 @@ final class AuthViewController: UIViewController,
     // MARK: Private Functions
     
     private func addObservers() {
-        // #error почему не отписалась?
-        // да и вообще оно надо в твоем случае. Я не проверял, но для айфона 5
-        // по моему все влезет
-
-        // по хорошему добавь логику нажатия на клавишу некст
-        // что бы курсор или переходил на ввод пароля,
-//        или убирал клавиатуру и делал запрос на бэк
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }

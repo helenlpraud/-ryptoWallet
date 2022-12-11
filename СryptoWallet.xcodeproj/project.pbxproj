@@ -33,6 +33,7 @@
 		4FB2A97A292A18AD00D57CED /* Double+rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB2A979292A18AD00D57CED /* Double+rounded.swift */; };
 		4FB2A97C292ACDB200D57CED /* UITableViewCell+reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB2A97B292ACDB200D57CED /* UITableViewCell+reuseIdentifier.swift */; };
 		4FC15063293E6540001E5D82 /* CryptoWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC15062293E6540001E5D82 /* CryptoWalletTests.swift */; };
+		4FC1508E2945E170001E5D82 /* UIMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC1508D2945E170001E5D82 /* UIMenuModel.swift */; };
 		4FD7F16C2923C80500CF9F10 /* AuthModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7F16B2923C80500CF9F10 /* AuthModuleBuilder.swift */; };
 		4FD7F16E2923D03F00CF9F10 /* CoinsListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7F16D2923D03F00CF9F10 /* CoinsListModuleBuilder.swift */; };
 		4FD7F1702923D85300CF9F10 /* DetailedCardCoinModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7F16F2923D85300CF9F10 /* DetailedCardCoinModuleBuilder.swift */; };
@@ -105,6 +106,7 @@
 		4FB2A97B292ACDB200D57CED /* UITableViewCell+reuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+reuseIdentifier.swift"; sourceTree = "<group>"; };
 		4FC15060293E6540001E5D82 /* СryptoWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "СryptoWalletTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC15062293E6540001E5D82 /* CryptoWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoWalletTests.swift; sourceTree = "<group>"; };
+		4FC1508D2945E170001E5D82 /* UIMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMenuModel.swift; sourceTree = "<group>"; };
 		4FD7F16B2923C80500CF9F10 /* AuthModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModuleBuilder.swift; sourceTree = "<group>"; };
 		4FD7F16D2923D03F00CF9F10 /* CoinsListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsListModuleBuilder.swift; sourceTree = "<group>"; };
 		4FD7F16F2923D85300CF9F10 /* DetailedCardCoinModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCardCoinModuleBuilder.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			children = (
 				4F7F3B9F291D3A1A005275A7 /* HeaderUIView.swift */,
 				4F7F3BA2291D51FB005275A7 /* HeaderUIViewModel.swift */,
+				4FC1508D2945E170001E5D82 /* UIMenuModel.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				4FD7F18129242CF600CF9F10 /* AppCoordinator.swift in Sources */,
 				4F345ACC291C0D0100BA0849 /* CoinRequest.swift in Sources */,
 				4FE8169C29127E4A00F4B1D9 /* AppDelegate.swift in Sources */,
+				4FC1508E2945E170001E5D82 /* UIMenuModel.swift in Sources */,
 				4F1FF0DC292D4554004A15E4 /* Images.swift in Sources */,
 				4F5CF1E72938F0C900593B16 /* AlertPresentationService.swift in Sources */,
 				4FB2A97C292ACDB200D57CED /* UITableViewCell+reuseIdentifier.swift in Sources */,

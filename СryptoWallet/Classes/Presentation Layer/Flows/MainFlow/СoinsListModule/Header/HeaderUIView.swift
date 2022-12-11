@@ -19,7 +19,7 @@ final class HeaderUIView: UITableViewHeaderFooterView,
         }
         
         static var widthSortButton: Double {
-            return 100.0
+            return 200.0
         }
     }
     
@@ -39,7 +39,7 @@ final class HeaderUIView: UITableViewHeaderFooterView,
     }
     
     // MARK: Subviews
-
+    
     private let sortButton: UIButton = {
         let button = UIButton()
         button.setTitle("Start sort", for: .normal)
@@ -64,17 +64,28 @@ final class HeaderUIView: UITableViewHeaderFooterView,
     }
     
     // MARK: Configure
-
+    
     func configure(with model: ViewModel) {
         var menuItems = [UIAction]()
         for item in model.actionsModel {
             let title = item.title
-            let handler = item.didSelectAction
+            let handler = item.handler
             guard let handler = handler else { return }
             let action = UIAction(title: title, handler: handler)
             menuItems.append(action)
         }
         let menu = UIMenu(title: model.menuModel.title, image: nil, identifier: nil, options: .displayInline, children: menuItems)
         sortButton.menu = menu
+    }
+    
+    func changeState(stateHeader: StateHeader) {
+        switch stateHeader {
+        case .sortFromLow:
+            sortButton.setTitle("% change USD 24H", for: .normal)
+            sortButton.setImage(UIImage(systemName: "arrow.up"), for: .normal)
+        case .sortFromHigh:
+            sortButton.setTitle("% change USD 24H", for: .normal)
+            sortButton.setImage(UIImage(systemName: "arrow.down"), for: .normal)
+        }
     }
 }

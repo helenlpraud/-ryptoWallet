@@ -87,6 +87,8 @@ final class CoinsListViewController: UIViewController,
         return tableView
     }()
     
+    private var headerView = HeaderUIView()
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -98,6 +100,7 @@ final class CoinsListViewController: UIViewController,
         setNavigationItem()
         addSubviews()
         bindViewModel()
+//        viewModel?.start()
         viewModel?.fetchCoins()
     }
     
@@ -167,7 +170,6 @@ final class CoinsListViewController: UIViewController,
     private func addTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        let headerView = HeaderUIView()
         if let headerVM = viewModel?.headerModel {
             headerView.configure(with: headerVM)
         }
@@ -187,26 +189,30 @@ final class CoinsListViewController: UIViewController,
     
     private func bindViewModel() {
         viewModel?.didFetchFail = { [weak self] reason in
-                self?.indicatorView.stopAnimating()
-                self?.errorLabel.text = reason
-                self?.errorLabel.isHidden = false
-                self?.reloadButton.isHidden = false
+            self?.indicatorView.stopAnimating()
+            self?.errorLabel.text = reason
+            self?.errorLabel.isHidden = false
+            self?.reloadButton.isHidden = false
         }
         
         viewModel?.didFetchSucces = { [weak self] in
-                self?.indicatorView.stopAnimating()
-                self?.errorLabel.isHidden = true
-                self?.reloadButton.isHidden = true
-                self?.tableView.isHidden = false
-                self?.tableView.reloadData()
+            self?.indicatorView.stopAnimating()
+            self?.errorLabel.isHidden = true
+            self?.reloadButton.isHidden = true
+            self?.tableView.isHidden = false
+            self?.tableView.reloadData()
         }
         
         viewModel?.didReloadTableView = { [weak self] in
-                self?.tableView.reloadData()
+            self?.tableView.reloadData()
         }
         
         viewModel?.didSelectCoin = { [weak self] coin in
             self?.onCoinSelect?(coin)
+        }
+        
+        viewModel?.headerModel?.didChangeStateHeader = { [weak self] state in
+            self?.headerView.changeState(stateHeader: state)
         }
     }
 }
