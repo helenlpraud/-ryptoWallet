@@ -100,7 +100,6 @@ final class CoinsListViewController: UIViewController,
         setNavigationItem()
         addSubviews()
         bindViewModel()
-//        viewModel?.start()
         viewModel?.fetchCoins()
     }
     
