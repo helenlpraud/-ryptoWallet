@@ -26,11 +26,6 @@ protocol CoinsListViewModelProtocol {
 
 final class CoinsListViewModel: CoinsListViewModelProtocol {
     
-    enum TypeSort {
-        case fromLow
-        case fromHigh
-    }
-    
     // MARK: Closures
     
     var didFetchSucces: (() -> Void)?
@@ -49,7 +44,14 @@ final class CoinsListViewModel: CoinsListViewModelProtocol {
     
     var headerModel: HeaderUIViewModel?
     
+    // MARK: Public Properties
+    
     var heightForRow: CGFloat = 130.0
+    
+    private enum TypeSort {
+        case fromLow
+        case fromHigh
+    }
     
     // MARK: Private Properties
     

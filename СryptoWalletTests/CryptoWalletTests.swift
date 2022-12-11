@@ -9,7 +9,7 @@ import XCTest
 @testable import СryptoWallet
 
 
-final class _ryptoWalletTests: XCTestCase {
+final class CryptoWalletTests: XCTestCase {
     
     var validationService: ValidationServiceProtocol!
     var authStateProvider: AuthStateProvider!

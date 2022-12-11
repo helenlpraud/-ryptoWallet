@@ -13,11 +13,11 @@ enum Images {
         return UIImage(systemName: "repeat") ?? UIImage()
     }
     
-    static var sotButtonSortedUp: UIImage {
+    static var sortButtonSortedUp: UIImage {
         return UIImage(systemName: "arrow.up") ?? UIImage()
     }
     
-    static var sotButtonSortedDown: UIImage {
+    static var sortButtonSortedDown: UIImage {
         return UIImage(systemName: "arrow.down") ?? UIImage()
     }
 }

@@ -44,7 +44,7 @@ final class HeaderUIView: UITableViewHeaderFooterView,
         let button = UIButton()
         button.setTitle(StringsHeader.sortButtonInitialTitle, for: .normal)
         button.setTitleColor(Colors.placeholderAuth, for: .normal)
-        button.tintColor = .black
+        button.tintColor = Colors.placeholderAuth
         button.showsMenuAsPrimaryAction = true
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -79,13 +79,14 @@ final class HeaderUIView: UITableViewHeaderFooterView,
     }
     
     func changeState(stateHeader: StateHeader) {
+        sortButton.setTitle(StringsHeader.sortButtonSortedTitle, for: .normal)
         switch stateHeader {
         case .sortFromLow:
-            sortButton.setTitle(StringsHeader.sortButtonSortedTitle, for: .normal)
-            sortButton.setImage(Images.sotButtonSortedUp, for: .normal)
+            sortButton.setImage(Images.sortButtonSortedUp, for: .normal)
+            sortButton.setImage(Images.sortButtonSortedUp.withTintColor(.white), for: .highlighted)
         case .sortFromHigh:
-            sortButton.setTitle(StringsHeader.sortButtonSortedTitle, for: .normal)
-            sortButton.setImage(Images.sotButtonSortedDown, for: .normal)
+            sortButton.setImage(Images.sortButtonSortedDown, for: .normal)
+            sortButton.setImage(Images.sortButtonSortedDown.withTintColor(.white), for: .highlighted)
         }
     }
 }
