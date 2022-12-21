@@ -20,6 +20,9 @@
 		4F345AB5291AD46F00BA0849 /* DetailedCardCoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345AB4291AD46F00BA0849 /* DetailedCardCoinViewModel.swift */; };
 		4F345ACA291BF9BC00BA0849 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345AC9291BF9BC00BA0849 /* NetworkService.swift */; };
 		4F345ACC291C0D0100BA0849 /* CoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F345ACB291C0D0100BA0849 /* CoinRequest.swift */; };
+		4F48E14F2953084900592CE5 /* ValidationServiceXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F48E14E2953084900592CE5 /* ValidationServiceXCTestCase.swift */; };
+		4F48E1512953095F00592CE5 /* AlertPresentationServiceXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F48E1502953095F00592CE5 /* AlertPresentationServiceXCTestCase.swift */; };
+		4F48E15329530A9700592CE5 /* AuthServiceXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F48E15229530A9700592CE5 /* AuthServiceXCTestCase.swift */; };
 		4F5CF1E32938BC9A00593B16 /* UIViewController+hideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5CF1E22938BC9A00593B16 /* UIViewController+hideKeyboard.swift */; };
 		4F5CF1E52938DC3D00593B16 /* ProcessingInputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5CF1E42938DC3D00593B16 /* ProcessingInputService.swift */; };
 		4F5CF1E72938F0C900593B16 /* AlertPresentationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5CF1E62938F0C900593B16 /* AlertPresentationService.swift */; };
@@ -32,7 +35,7 @@
 		4F7F3BA3291D51FB005275A7 /* HeaderUIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F3BA2291D51FB005275A7 /* HeaderUIViewModel.swift */; };
 		4FB2A97A292A18AD00D57CED /* Double+rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB2A979292A18AD00D57CED /* Double+rounded.swift */; };
 		4FB2A97C292ACDB200D57CED /* UITableViewCell+reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB2A97B292ACDB200D57CED /* UITableViewCell+reuseIdentifier.swift */; };
-		4FC15063293E6540001E5D82 /* CryptoWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC15062293E6540001E5D82 /* CryptoWalletTests.swift */; };
+		4FC15063293E6540001E5D82 /* ProcessingInputServiceXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC15062293E6540001E5D82 /* ProcessingInputServiceXCTestCase.swift */; };
 		4FC1508E2945E170001E5D82 /* UIMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC1508D2945E170001E5D82 /* UIMenuModel.swift */; };
 		4FC150902946280A001E5D82 /* StateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC1508F2946280A001E5D82 /* StateHeader.swift */; };
 		4FD7F16C2923C80500CF9F10 /* AuthModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7F16B2923C80500CF9F10 /* AuthModuleBuilder.swift */; };
@@ -93,6 +96,9 @@
 		4F345AB4291AD46F00BA0849 /* DetailedCardCoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCardCoinViewModel.swift; sourceTree = "<group>"; };
 		4F345AC9291BF9BC00BA0849 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		4F345ACB291C0D0100BA0849 /* CoinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRequest.swift; sourceTree = "<group>"; };
+		4F48E14E2953084900592CE5 /* ValidationServiceXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServiceXCTestCase.swift; sourceTree = "<group>"; };
+		4F48E1502953095F00592CE5 /* AlertPresentationServiceXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentationServiceXCTestCase.swift; sourceTree = "<group>"; };
+		4F48E15229530A9700592CE5 /* AuthServiceXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceXCTestCase.swift; sourceTree = "<group>"; };
 		4F5CF1E22938BC9A00593B16 /* UIViewController+hideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboard.swift"; sourceTree = "<group>"; };
 		4F5CF1E42938DC3D00593B16 /* ProcessingInputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingInputService.swift; sourceTree = "<group>"; };
 		4F5CF1E62938F0C900593B16 /* AlertPresentationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentationService.swift; sourceTree = "<group>"; };
@@ -106,7 +112,7 @@
 		4FB2A979292A18AD00D57CED /* Double+rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+rounded.swift"; sourceTree = "<group>"; };
 		4FB2A97B292ACDB200D57CED /* UITableViewCell+reuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+reuseIdentifier.swift"; sourceTree = "<group>"; };
 		4FC15060293E6540001E5D82 /* СryptoWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "СryptoWalletTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FC15062293E6540001E5D82 /* CryptoWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoWalletTests.swift; sourceTree = "<group>"; };
+		4FC15062293E6540001E5D82 /* ProcessingInputServiceXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingInputServiceXCTestCase.swift; sourceTree = "<group>"; };
 		4FC1508D2945E170001E5D82 /* UIMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMenuModel.swift; sourceTree = "<group>"; };
 		4FC1508F2946280A001E5D82 /* StateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateHeader.swift; sourceTree = "<group>"; };
 		4FD7F16B2923C80500CF9F10 /* AuthModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModuleBuilder.swift; sourceTree = "<group>"; };
@@ -341,7 +347,10 @@
 		4FC15061293E6540001E5D82 /* СryptoWalletTests */ = {
 			isa = PBXGroup;
 			children = (
-				4FC15062293E6540001E5D82 /* CryptoWalletTests.swift */,
+				4FC15062293E6540001E5D82 /* ProcessingInputServiceXCTestCase.swift */,
+				4F48E14E2953084900592CE5 /* ValidationServiceXCTestCase.swift */,
+				4F48E1502953095F00592CE5 /* AlertPresentationServiceXCTestCase.swift */,
+				4F48E15229530A9700592CE5 /* AuthServiceXCTestCase.swift */,
 			);
 			path = "СryptoWalletTests";
 			sourceTree = "<group>";
@@ -621,7 +630,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FC15063293E6540001E5D82 /* CryptoWalletTests.swift in Sources */,
+				4F48E15329530A9700592CE5 /* AuthServiceXCTestCase.swift in Sources */,
+				4FC15063293E6540001E5D82 /* ProcessingInputServiceXCTestCase.swift in Sources */,
+				4F48E14F2953084900592CE5 /* ValidationServiceXCTestCase.swift in Sources */,
+				4F48E1512953095F00592CE5 /* AlertPresentationServiceXCTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
