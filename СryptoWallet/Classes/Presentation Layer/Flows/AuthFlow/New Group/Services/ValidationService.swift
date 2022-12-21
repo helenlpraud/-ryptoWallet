@@ -5,9 +5,6 @@
 //  Created by Shagaeva Elena on 15.11.2022.
 //
 
-import Foundation
-import UIKit
-
 typealias ResultCheking = (isSuccessChecked: Bool, errorType: ErrorType?)?
 
 enum ErrorType {
