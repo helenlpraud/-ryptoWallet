@@ -7,11 +7,11 @@
 
 import UIKit
 
-struct UIMenuModel {
+struct MenuModel {
     let title: String
 }
 
-struct UIActionModel {
+struct ActionModel {
     let title: String
     let handler: ((UIAction) -> Void)?
 }

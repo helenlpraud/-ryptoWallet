@@ -7,8 +7,8 @@
 
 protocol HeaderUIViewModelProtocol {
     
-    var menuModel: UIMenuModel { get set }
-    var actionsModel: [UIActionModel] { get set }
+    var menuModel: MenuModel { get set }
+    var actionsModel: [ActionModel] { get set }
     
     var didChangeStateHeader: ((StateHeader) -> (Void))? { get set }
 }
@@ -19,15 +19,15 @@ final class HeaderUIViewModel: HeaderUIViewModelProtocol {
     
     var didChangeStateHeader: ((StateHeader) -> (Void))?
 
-    var menuModel: UIMenuModel
-    var actionsModel: [UIActionModel]
+    var menuModel: MenuModel
+    var actionsModel: [ActionModel]
     var buttonHeigh = 50.0
     var buttonWidth = 50.0
     
     // MARK: Initializer
 
-    init(menuModel: UIMenuModel,
-         actionsModel: [UIActionModel]) {
+    init(menuModel: MenuModel,
+         actionsModel: [ActionModel]) {
         self.menuModel = menuModel
         self.actionsModel = actionsModel
     }
